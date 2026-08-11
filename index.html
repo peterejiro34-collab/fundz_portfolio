@@ -742,134 +742,88 @@
                     </div>
 
                 </div>
+<section class="project-details" id="contact">
 
+    <div class="project-details-inner">
 
-                <form
-                    class="contact-form"
-                    id="contactForm"
-                    action="https://formspree.io/f/YOUR_FORM_ID"
-                    method="POST"
-                >
+        <h2>Project Details</h2>
 
-                    <div class="form-row">
+        <form
+            id="projectForm"
+            class="project-form"
+        >
 
-                        <div class="form-group">
+            <div class="form-group">
+                <label for="projectType">Project Type</label>
 
-                            <label for="name">
-                                Your Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Peter Ejiiro"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="peterejiro34@gmail.com"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="service">
-                            Service
-                        </label>
-
-                        <select
-                            id="service"
-                            name="service"
-                            required
-                        >
-                            <option value="">
-                                Select a service
-                            </option>
-
-                            <option value="Web Development">
-                                Web Development
-                            </option>
-
-                            <option value="UI/UX Design">
-                                UI/UX Design
-                            </option>
-
-                            <option value="Brand Identity">
-                                Brand Identity
-                            </option>
-
-                            <option value="Other">
-                                Other
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Project Details
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="7"
-                            placeholder="Tell me about your project..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Fundz Project Enquiry"
-                    >
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary form-submit"
-                    >
-                        Send Project Enquiry
-                        <span>→</span>
-                    </button>
-
-
-                    <p
-                        class="form-status"
-                        id="formStatus"
-                    ></p>
-
-                </form>
-
+                <select id="projectType" required>
+                    <option value="">Select a service</option>
+                    <option value="Web Development">
+                        Web Development
+                    </option>
+                    <option value="UI/UX Design">
+                        UI/UX Design
+                    </option>
+                    <option value="Brand Identity">
+                        Brand Identity
+                    </option>
+                    <option value="Website Redesign">
+                        Website Redesign
+                    </option>
+                    <option value="Digital Product">
+                        Digital Product
+                    </option>
+                </select>
             </div>
 
-        </section>
+            <div class="form-group">
+                <label for="clientName">Your Name</label>
 
-    </main>
+                <input
+                    type="text"
+                    id="clientName"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="clientEmail">Email</label>
+
+                <input
+                    type="email"
+                    id="clientEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="projectMessage">
+                    Tell us about your project
+                </label>
+
+                <textarea
+                    id="projectMessage"
+                    rows="6"
+                    placeholder="Tell Fundz what you want to build..."
+                    required
+                ></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="project-submit"
+            >
+                Send Project Enquiry
+                <span>→</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
 
     <!-- ================= FOOTER ================= -->
