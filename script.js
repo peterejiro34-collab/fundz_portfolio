@@ -1,97 +1,254 @@
-// ========================================
-// FUNDZ PORTFOLIO - V3.1
-// Navigation + Mobile Menu
-// ========================================
+/* =========================================================
+   FUNDZ V3
+   JAVASCRIPT
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    const menuButton = document.querySelector(".menu-toggle");
-    const mobileMenu = document.querySelector(".mobile-menu");
-    const menuLinks = document.querySelectorAll(".mobile-menu a");
+/* ================= MOBILE MENU ================= */
 
-    // Open / close mobile menu
-    if (menuButton && mobileMenu) {
-        menuButton.addEventListener("click", () => {
-            const isOpen = mobileMenu.classList.toggle("active");
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
 
-            menuButton.classList.toggle("active", isOpen);
-            menuButton.setAttribute("aria-expanded", isOpen);
-            document.body.classList.toggle("menu-open", isOpen);
-        });
-    }
+if (menuToggle && mobileNav) {
 
-    // Close menu when a link is clicked
-    menuLinks.forEach(link => {
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            mobileNav.classList.toggle("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    const mobileLinks =
+        mobileNav.querySelectorAll("a");
+
+    mobileLinks.forEach((link) => {
+
         link.addEventListener("click", () => {
-            mobileMenu.classList.remove("active");
-            menuButton.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
+
+            mobileNav.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
         });
+
     });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (event) => {
-        if (
-            mobileMenu &&
-            menuButton &&
-            mobileMenu.classList.contains("active") &&
-            !mobileMenu.contains(event.target) &&
-            !menuButton.contains(event.target)
-        ) {
-            mobileMenu.classList.remove("active");
-            menuButton.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
-        }
-    });
+}
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (event) {
-            const targetId = this.getAttribute("href");
 
-            if (targetId === "#") return;
+/* ================= CURRENT YEAR ================= */
 
-            const target = document.querySelector(targetId);
+const yearElement =
+    document.getElementById("year");
 
-            if (target) {
-                event.preventDefault();
+if (yearElement) {
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
-    });
+    yearElement.textContent =
+        new Date().getFullYear();
 
-    // Update active navigation item while scrolling
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".mobile-menu a");
+}
 
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove("active-link");
 
-                        if (
-                            link.getAttribute("href") ===
-                            "#" + entry.target.id
-                        ) {
-                            link.classList.add("active-link");
+/* ================= CONTACT FORM ================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const formStatus =
+    document.getElementById("formStatus");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            const submitButton =
+                contactForm.querySelector(
+                    'button[type="submit"]'
+                );
+
+            const originalText =
+                submitButton.innerHTML;
+
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML =
+                "Sending...";
+
+
+            const formData =
+                new FormData(contactForm);
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        contactForm.action,
+                        {
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "Accept":
+                                    "application/json"
+                            }
                         }
-                    });
+                    );
+
+
+                if (response.ok) {
+
+                    formStatus.textContent =
+                        "Thank you! Your project enquiry has been sent.";
+
+                    formStatus.style.color =
+                        "#63dcc9";
+
+                    contactForm.reset();
+
+                } else {
+
+                    throw new Error(
+                        "Form submission failed."
+                    );
+
                 }
-            });
-        },
-        {
-            threshold: 0.35
+
+            } catch (error) {
+
+                formStatus.textContent =
+                    "Something went wrong. Please try again or contact Fundz directly.";
+
+                formStatus.style.color =
+                    "#ff8b8b";
+
+            }
+
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML =
+                originalText;
+
         }
     );
 
-    sections.forEach(section => observer.observe(section));
+}
+
+
+/* ================= SCROLL REVEAL ================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".service-card, .project, .process-step, .about-content, .contact-form"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+
+revealElements.forEach((element) => {
+
+    element.classList.add(
+        "reveal"
+    );
+
+    observer.observe(element);
 
 });
+
+
+/* ================= SMOOTH ANCHOR OFFSET ================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                const header =
+                    document.querySelector(
+                        ".site-header"
+                    );
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+                const targetPosition =
+                    target.getBoundingClientRect()
+                        .top +
+                    window.scrollY -
+                    headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    });
