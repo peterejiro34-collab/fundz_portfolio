@@ -1,93 +1,111 @@
-/* ========================================
-   FUNDZ WEBSITE JAVASCRIPT
-======================================== */
+/* ================= MOBILE MENU ================= */
 
-const menuButton = document.getElementById("menuButton");
-
-const navigation = document.getElementById("navigation");
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
 
 
-/* ========================================
-   MOBILE MENU
-======================================== */
+menu.addEventListener("click", function () {
 
-menuButton.addEventListener("click", function () {
+    nav.classList.toggle("open");
 
-    navigation.classList.toggle("active");
+    if (nav.classList.contains("open")) {
 
-    if (navigation.classList.contains("active")) {
-
-        menuButton.textContent = "×";
+        menu.textContent = "×";
 
     } else {
 
-        menuButton.textContent = "☰";
+        menu.textContent = "☰";
 
     }
 
 });
 
 
-/* ========================================
-   CLOSE MENU AFTER CLICK
-======================================== */
+/* Close mobile menu after clicking a link */
 
-const navigationLinks =
-    document.querySelectorAll("#navigation a");
-
-navigationLinks.forEach(function (link) {
+document.querySelectorAll("#nav a").forEach(function (link) {
 
     link.addEventListener("click", function () {
 
-        navigation.classList.remove("active");
+        nav.classList.remove("open");
 
-        menuButton.textContent = "☰";
+        menu.textContent = "☰";
 
     });
 
 });
 
 
-/* ========================================
-   SCROLL REVEAL
-======================================== */
+/* ================= SCROLL ANIMATION ================= */
 
-const elements =
-    document.querySelectorAll(
-        ".service-card, .project, .step, .stats div"
-    );
+const observer = new IntersectionObserver(
+
+    function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.08
+    }
+
+);
 
 
-const observer =
-    new IntersectionObserver(
+document
+    .querySelectorAll(".reveal")
+    .forEach(function (element) {
 
-        function (entries) {
+        observer.observe(element);
 
-            entries.forEach(function (entry) {
+    });
 
-                if (entry.isIntersecting) {
 
-                    entry.target.classList.add("visible");
+/* ================= ACTIVE NAVIGATION ================= */
 
-                    observer.unobserve(entry.target);
+const sections = document.querySelectorAll("section[id]");
 
-                }
+const navLinks = document.querySelectorAll("#nav a");
 
-            });
 
-        },
+window.addEventListener("scroll", function () {
 
-        {
-            threshold: 0.1
+    let current = "";
+
+    sections.forEach(function (section) {
+
+        const sectionTop = section.offsetTop;
+
+        if (window.scrollY >= sectionTop - 200) {
+
+            current = section.getAttribute("id");
+
         }
 
-    );
+    });
 
 
-elements.forEach(function (element) {
+    navLinks.forEach(function (link) {
 
-    element.classList.add("hidden");
+        link.classList.remove("active");
 
-    observer.observe(element);
+        if (
+            link.getAttribute("href") === "#" + current
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 });
