@@ -1144,3 +1144,18 @@ footer a {
     }
 
 }
+.hidden {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+}
+
+.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
