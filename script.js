@@ -1,127 +1,97 @@
-/* =========================================
-   FUNDZ V3 JAVASCRIPT
-========================================= */
+// ========================================
+// FUNDZ PORTFOLIO - V3.1
+// Navigation + Mobile Menu
+// ========================================
 
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener("DOMContentLoaded", () => {
 
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const menuLinks = document.querySelectorAll(".mobile-menu a");
 
-// =========================================
-// MOBILE MENU
-// =========================================
+    // Open / close mobile menu
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("active");
 
-menuButton.addEventListener("click", () => {
+            menuButton.classList.toggle("active", isOpen);
+            menuButton.setAttribute("aria-expanded", isOpen);
+            document.body.classList.toggle("menu-open", isOpen);
+        });
+    }
 
-  const isOpen = mobileMenu.classList.toggle("active");
+    // Close menu when a link is clicked
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            menuButton.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+        });
+    });
 
-  menuButton.setAttribute(
-    "aria-expanded",
-    isOpen
-  );
+    // Close menu when clicking outside
+    document.addEventListener("click", (event) => {
+        if (
+            mobileMenu &&
+            menuButton &&
+            mobileMenu.classList.contains("active") &&
+            !mobileMenu.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            mobileMenu.classList.remove("active");
+            menuButton.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+        }
+    });
 
-  menuButton.setAttribute(
-    "aria-label",
-    isOpen
-      ? "Close menu"
-      : "Open menu"
-  );
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (event) {
+            const targetId = this.getAttribute("href");
 
-});
+            if (targetId === "#") return;
 
+            const target = document.querySelector(targetId);
 
-// =========================================
-// CLOSE MENU AFTER CLICKING A LINK
-// =========================================
+            if (target) {
+                event.preventDefault();
 
-const mobileLinks =
-  document.querySelectorAll(
-    ".mobile-menu a"
-  );
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+    });
 
-mobileLinks.forEach((link) => {
+    // Update active navigation item while scrolling
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".mobile-menu a");
 
-  link.addEventListener("click", () => {
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove("active-link");
 
-    mobileMenu.classList.remove("active");
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
+                        if (
+                            link.getAttribute("href") ===
+                            "#" + entry.target.id
+                        ) {
+                            link.classList.add("active-link");
+                        }
+                    });
+                }
+            });
+        },
+        {
+            threshold: 0.35
+        }
     );
 
-    menuButton.setAttribute(
-      "aria-label",
-      "Open menu"
-    );
-
-  });
+    sections.forEach(section => observer.observe(section));
 
 });
-
-
-// =========================================
-// CLOSE MENU WHEN CLICKING OUTSIDE
-// =========================================
-
-document.addEventListener("click", (event) => {
-
-  const clickedInsideMenu =
-    mobileMenu.contains(event.target);
-
-  const clickedButton =
-    menuButton.contains(event.target);
-
-  if (
-    !clickedInsideMenu &&
-    !clickedButton &&
-    mobileMenu.classList.contains("active")
-  ) {
-
-    mobileMenu.classList.remove("active");
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-  }
-
-});
-
-
-// =========================================
-// SCROLL HEADER EFFECT
-// =========================================
-
-const header =
-  document.querySelector(".site-header");
-
-window.addEventListener("scroll", () => {
-
-  if (window.scrollY > 50) {
-
-    header.style.boxShadow =
-      "0 10px 40px rgba(0,0,0,0.18)";
-
-  } else {
-
-    header.style.boxShadow = "none";
-
-  }
-
-});
-
-
-// =========================================
-// CURRENT YEAR
-// =========================================
-
-const year =
-  document.querySelector(".copyright");
-
-if (year) {
-
-  year.innerHTML =
-    `© ${new Date().getFullYear()} Fundz. All rights reserved.`;
-
-}
