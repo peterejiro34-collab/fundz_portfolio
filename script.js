@@ -1,111 +1,254 @@
+/* =========================================================
+   FUNDZ V3
+   JAVASCRIPT
+========================================================= */
+
+
 /* ================= MOBILE MENU ================= */
 
-const menu = document.getElementById("menu");
-const nav = document.getElementById("nav");
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
 
+if (menuToggle && mobileNav) {
 
-menu.addEventListener("click", function () {
+    menuToggle.addEventListener("click", () => {
 
-    nav.classList.toggle("open");
+        const isOpen =
+            mobileNav.classList.toggle("active");
 
-    if (nav.classList.contains("open")) {
-
-        menu.textContent = "×";
-
-    } else {
-
-        menu.textContent = "☰";
-
-    }
-
-});
-
-
-/* Close mobile menu after clicking a link */
-
-document.querySelectorAll("#nav a").forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        nav.classList.remove("open");
-
-        menu.textContent = "☰";
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
     });
 
-});
 
+    const mobileLinks =
+        mobileNav.querySelectorAll("a");
 
-/* ================= SCROLL ANIMATION ================= */
+    mobileLinks.forEach((link) => {
 
-const observer = new IntersectionObserver(
+        link.addEventListener("click", () => {
 
-    function (entries) {
+            mobileNav.classList.remove("active");
 
-        entries.forEach(function (entry) {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         });
 
-    },
-
-    {
-        threshold: 0.08
-    }
-
-);
-
-
-document
-    .querySelectorAll(".reveal")
-    .forEach(function (element) {
-
-        observer.observe(element);
-
     });
 
-
-/* ================= ACTIVE NAVIGATION ================= */
-
-const sections = document.querySelectorAll("section[id]");
-
-const navLinks = document.querySelectorAll("#nav a");
+}
 
 
-window.addEventListener("scroll", function () {
+/* ================= CURRENT YEAR ================= */
 
-    let current = "";
+const yearElement =
+    document.getElementById("year");
 
-    sections.forEach(function (section) {
+if (yearElement) {
 
-        const sectionTop = section.offsetTop;
+    yearElement.textContent =
+        new Date().getFullYear();
 
-        if (window.scrollY >= sectionTop - 200) {
+}
 
-            current = section.getAttribute("id");
+
+/* ================= CONTACT FORM ================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const formStatus =
+    document.getElementById("formStatus");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            const submitButton =
+                contactForm.querySelector(
+                    'button[type="submit"]'
+                );
+
+            const originalText =
+                submitButton.innerHTML;
+
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML =
+                "Sending...";
+
+
+            const formData =
+                new FormData(contactForm);
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        contactForm.action,
+                        {
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "Accept":
+                                    "application/json"
+                            }
+                        }
+                    );
+
+
+                if (response.ok) {
+
+                    formStatus.textContent =
+                        "Thank you! Your project enquiry has been sent.";
+
+                    formStatus.style.color =
+                        "#63dcc9";
+
+                    contactForm.reset();
+
+                } else {
+
+                    throw new Error(
+                        "Form submission failed."
+                    );
+
+                }
+
+            } catch (error) {
+
+                formStatus.textContent =
+                    "Something went wrong. Please try again or contact Fundz directly.";
+
+                formStatus.style.color =
+                    "#ff8b8b";
+
+            }
+
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML =
+                originalText;
 
         }
+    );
 
-    });
+}
 
 
-    navLinks.forEach(function (link) {
+/* ================= SCROLL REVEAL ================= */
 
-        link.classList.remove("active");
+const revealElements =
+    document.querySelectorAll(
+        ".service-card, .project, .process-step, .about-content, .contact-form"
+    );
 
-        if (
-            link.getAttribute("href") === "#" + current
-        ) {
 
-            link.classList.add("active");
+const observer =
+    new IntersectionObserver(
+        (entries) => {
 
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.1
         }
+    );
 
-    });
+
+revealElements.forEach((element) => {
+
+    element.classList.add(
+        "reveal"
+    );
+
+    observer.observe(element);
 
 });
+
+
+/* ================= SMOOTH ANCHOR OFFSET ================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                const header =
+                    document.querySelector(
+                        ".site-header"
+                    );
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+                const targetPosition =
+                    target.getBoundingClientRect()
+                        .top +
+                    window.scrollY -
+                    headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    });
