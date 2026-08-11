@@ -1,1 +1,12 @@
+services:
 
+  - type: web
+    runtime: static
+
+    name: fundz-portfolio
+
+    buildCommand: ""
+
+    staticPublishPath: .
+
+    autoDeployTrigger: commit
