@@ -1,761 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="theme-color" content="#05091d">
+    <meta
+        name="description"
+        content="Fundz — Web Development, UI/UX Design and Branding by Peter Ejiiro."
+    >
 
-    <meta name="description"
-        content="Fundz — Web Development, UI/UX Design and Branding by Peter Ejiro.">
+    <meta
+        name="theme-color"
+        content="#050a24"
+    >
 
-    <meta property="og:title"
-        content="Fundz — Digital Creative Studio">
+    <title>Fundz | Digital Creative Studio</title>
 
-    <meta property="og:description"
-        content="Web development, UI/UX design and digital creative services.">
-
-    <title>Fundz — Digital Creative Studio</title>
-
-    <link rel="icon" href="assets/fundz-brand-card.jpg">
-
-    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
 
-<header class="header">
+    <header class="site-header">
 
-    <a href="#home" class="brand">
+        <div class="container nav-container">
 
-        <b class="logo">F</b>
+            <a
+                href="#home"
+                class="logo"
+            >
+                <span class="logo-icon">F</span>
 
-        <span>
-            <strong>Fundz</strong>
-            <small>DIGITAL CREATIVE STUDIO</small>
-        </span>
-
-    </a>
-
-
-    <nav id="nav">
-
-        <a href="#home">Home</a>
-
-        <a href="#about">About</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#work">Portfolio</a>
-
-        <a href="#process">Process</a>
-
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-
-    <a href="#contact" class="head-btn">
-        Start a project ↗
-    </a>
-
-
-    <button id="menu" class="menu" aria-label="Open menu">
-        ☰
-    </button>
-
-</header>
-
-
-<main>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-copy reveal">
-
-        <p class="eyebrow">
-            WEB DEVELOPMENT • UI/UX • BRANDING
-        </p>
-
-
-        <h1>
-            Digital products
-            <br>
-            with <span>purpose.</span>
-        </h1>
-
-
-        <p class="lead">
-            Fundz helps businesses, creators and startups
-            turn ideas into fast, modern and memorable
-            digital experiences.
-        </p>
-
-
-        <div class="actions">
-
-            <a href="#work" class="btn primary">
-                Explore my work ↗
+                <span class="logo-text">
+                    <strong>Fundz</strong>
+                    <small>DIGITAL CREATIVE STUDIO</small>
+                </span>
             </a>
 
-            <a href="#contact" class="btn outline">
-                Let's talk
-            </a>
+            <nav
+                class="desktop-nav"
+                aria-label="Main navigation"
+            >
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
 
+        <!-- Mobile Navigation -->
 
-        <div class="stats">
+        <nav
+            class="mobile-nav"
+            id="mobileNav"
+            aria-label="Mobile navigation"
+        >
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-            <div>
-                <b>01</b>
-                <small>Web Development</small>
-            </div>
+    </header>
 
-            <div>
-                <b>02</b>
-                <small>UI/UX Design</small>
-            </div>
 
-            <div>
-                <b>03</b>
-                <small>Brand Identity</small>
-            </div>
+    <main>
 
-        </div>
+        <!-- ================= HERO ================= -->
 
-    </div>
+        <section
+            class="hero"
+            id="home"
+        >
 
+            <div class="container hero-grid">
 
-    <!-- HERO GRAPHIC -->
+                <div class="hero-content">
 
-    <div class="hero-art reveal">
+                    <p class="eyebrow">
+                        WEB DEVELOPMENT • UI/UX • BRANDING
+                    </p>
 
-        <div class="glow"></div>
+                    <h1>
+                        Building digital
+                        <span>experiences</span>
+                        that move brands forward.
+                    </h1>
 
-        <div class="ring r1"></div>
+                    <p class="hero-description">
+                        I'm <strong>Peter Ejiiro</strong>, founder of Fundz.
+                        I design and build modern websites and digital
+                        experiences that look great, perform fast and help
+                        brands grow online.
+                    </p>
 
-        <div class="ring r2"></div>
+                    <div class="hero-buttons">
 
-        <div class="core">
-            F
-        </div>
+                        <a
+                            href="#work"
+                            class="btn btn-primary"
+                        >
+                            View My Work
+                            <span>→</span>
+                        </a>
 
+                        <a
+                            href="#contact"
+                            class="btn btn-secondary"
+                        >
+                            Start a Project
+                        </a>
 
-        <div class="float available">
-            ● Available for projects
-        </div>
+                    </div>
 
+                    <div class="hero-services">
 
-        <div class="float tech">
+                        <div>
+                            <strong>01</strong>
+                            <span>Web Development</span>
+                        </div>
 
-            <i>HTML</i>
+                        <div>
+                            <strong>02</strong>
+                            <span>UI/UX Design</span>
+                        </div>
 
-            <i>CSS</i>
+                        <div>
+                            <strong>03</strong>
+                            <span>Brand Identity</span>
+                        </div>
 
-            <i>JS</i>
+                    </div>
 
-            <i>API</i>
+                </div>
 
-        </div>
 
-    </div>
+                <div class="hero-visual">
 
-</section>
+                    <div class="hero-card">
 
+                        <div class="card-glow"></div>
 
-<!-- ================= MARQUEE ================= -->
+                        <div class="card-window">
 
-<div class="marquee">
-    BUILD ✦ DESIGN ✦ LAUNCH ✦ GROW ✦
-    BUILD ✦ DESIGN ✦ LAUNCH ✦ GROW
-</div>
+                            <div class="window-top">
+                                <span></span>
+                                <span></span>
+                                <span></span>
 
+                                <small>fundz.dev</small>
+                            </div>
 
-<!-- ================= ABOUT ================= -->
+                            <div class="window-content">
 
-<section class="section about" id="about">
+                                <p>DEVELOPER PLATFORM</p>
 
-    <p class="tag">
-        01 / ABOUT FUNDZ
-    </p>
+                                <h2>
+                                    Build.
+                                    <br>
+                                    Ship.
+                                    <span>Grow.</span>
+                                </h2>
 
+                                <div class="fake-lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
 
-    <div class="two">
+                            </div>
 
-        <h2>
-            Technology that
-            <br>
-            <span>feels human.</span>
-        </h2>
+                        </div>
 
-
-        <div class="copy">
-
-            <p>
-                I'm <strong>Peter Ejiro</strong>,
-                founder of Fundz.
-                I build digital experiences that
-                combine clean technology with strong
-                visual design.
-            </p>
-
-
-            <p>
-                From company websites and landing pages
-                to web applications and brand presence,
-                Fundz focuses on making the final product
-                clear, responsive and useful.
-            </p>
-
-
-            <a href="#contact" class="link">
-                Work with Fundz →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SERVICES ================= -->
-
-<section class="section" id="services">
-
-    <p class="tag">
-        02 / SERVICES
-    </p>
-
-
-    <div class="heading">
-
-        <h2>
-            What Fundz
-            <br>
-            <span>can build.</span>
-        </h2>
-
-
-        <p>
-            From the first idea to the final launch,
-            I can help shape the digital side of your
-            brand.
-        </p>
-
-    </div>
-
-
-    <div class="cards">
-
-        <!-- SERVICE 1 -->
-
-        <article>
-
-            <small>01</small>
-
-            <b class="icon">
-                &lt;/&gt;
-            </b>
-
-            <h3>
-                Web Development
-            </h3>
-
-            <p>
-                Responsive websites and web experiences
-                built for performance, mobile devices
-                and real users.
-            </p>
-
-            <ul>
-                <li>Business websites</li>
-                <li>Landing pages</li>
-                <li>Web applications</li>
-            </ul>
-
-        </article>
-
-
-        <!-- SERVICE 2 -->
-
-        <article>
-
-            <small>02</small>
-
-            <b class="icon">
-                ◈
-            </b>
-
-            <h3>
-                UI/UX Design
-            </h3>
-
-            <p>
-                Clean interfaces, wireframes and user
-                flows designed to make products simple
-                and enjoyable.
-            </p>
-
-            <ul>
-                <li>UI design</li>
-                <li>UX flows</li>
-                <li>Prototypes</li>
-            </ul>
-
-        </article>
-
-
-        <!-- SERVICE 3 -->
-
-        <article>
-
-            <small>03</small>
-
-            <b class="icon">
-                ✦
-            </b>
-
-            <h3>
-                Brand Identity
-            </h3>
-
-            <p>
-                Digital visual direction that helps
-                your brand look consistent, credible
-                and recognizable.
-            </p>
-
-            <ul>
-                <li>Visual identity</li>
-                <li>Social graphics</li>
-                <li>Creative direction</li>
-            </ul>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PORTFOLIO ================= -->
-
-<section class="section portfolio" id="work">
-
-    <p class="tag">
-        03 / PORTFOLIO
-    </p>
-
-
-    <div class="heading">
-
-        <h2>
-            Selected <span>work.</span>
-        </h2>
-
-        <p>
-            A growing collection of Fundz concepts,
-            websites and creative work.
-        </p>
-
-    </div>
-
-
-    <div class="projects">
-
-
-        <!-- PROJECT 1 -->
-
-        <article class="project featured">
-
-            <div class="media">
-
-         <img
-    src="assets/fundz-brand-card.jpg"
-    alt="Fundz brand identity"
->
-
-                <label>
-                    BRAND IDENTITY
-                </label>
-
-            </div>
-
-
-            <div class="project-info">
-
-                <h3>
-                    <em>01</em>
-                    Fundz Brand System
-                </h3>
-
-                <p>
-                    Technology-driven visual identity
-                    for the Fundz digital brand.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJECT 2 -->
-
-        <article class="project">
-
-            <div class="media mock">
-
-                <div class="browser">
-
-                    <header>
-                        ● ● ●
-                        <span>fundz.dev</span>
-                    </header>
-
-                    <main>
-
-                        <small>
-                            DEVELOPER PLATFORM
-                        </small>
-
-                        <strong>
-                            Build.
-                            Ship.
-                            <br>
-                            <i>Grow.</i>
-                        </strong>
-
-                        <hr>
-                        <hr>
-                        <hr>
-
-                    </main>
+                    </div>
 
                 </div>
 
             </div>
 
+        </section>
 
-            <div class="project-info">
 
-                <h3>
-                    <em>02</em>
-                    Developer Platform
-                </h3>
+        <!-- ================= SERVICES ================= -->
+
+        <section
+            class="services section"
+            id="services"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        WHAT I DO
+                    </p>
+
+                    <h2>
+                        Digital solutions
+                        <span>built to perform.</span>
+                    </h2>
+
+                    <p>
+                        From strategy and design to development and launch,
+                        Fundz helps turn ideas into polished digital products.
+                    </p>
+
+                </div>
+
+
+                <div class="service-grid">
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <div class="service-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Fast, responsive and modern websites built
+                            for businesses, creators and digital brands.
+                        </p>
+
+                        <ul>
+                            <li>Business websites</li>
+                            <li>Landing pages</li>
+                            <li>Portfolio websites</li>
+                            <li>Responsive development</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <div class="service-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            UI/UX Design
+                        </h3>
+
+                        <p>
+                            Clean interfaces and user experiences designed
+                            around clarity, usability and conversion.
+                        </p>
+
+                        <ul>
+                            <li>Website UI design</li>
+                            <li>Mobile interfaces</li>
+                            <li>Wireframes</li>
+                            <li>Design systems</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <div class="service-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Brand Identity
+                        </h3>
+
+                        <p>
+                            Visual identities that give businesses a
+                            recognizable and professional digital presence.
+                        </p>
+
+                        <ul>
+                            <li>Brand direction</li>
+                            <li>Logo concepts</li>
+                            <li>Visual systems</li>
+                            <li>Digital brand assets</li>
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WORK ================= -->
+
+        <section
+            class="work section"
+            id="work"
+        >
+
+            <div class="container">
+
+                <div class="section-heading work-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SELECTED WORK
+                        </p>
+
+                        <h2>
+                            Projects that
+                            <span>tell the story.</span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        A selection of digital experiences,
+                        brand systems and creative projects.
+                    </p>
+
+                </div>
+
+
+                <!-- Project 01 -->
+
+                <article class="project">
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/fundz-brand-card.jpg"
+                            alt="Fundz brand identity"
+                            loading="lazy"
+                        >
+
+                        <div class="project-tag">
+                            BRAND IDENTITY
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <div class="project-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Fundz Brand System
+                            </h3>
+
+                            <p>
+                                Technology-driven visual identity for
+                                the Fundz digital brand.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 02 -->
+
+                <article class="project project-reverse">
+
+                    <div class="project-image website-preview">
+
+                        <div class="preview-browser">
+
+                            <div class="preview-top">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                                <small>fundz.dev</small>
+                            </div>
+
+                            <div class="preview-body">
+
+                                <p>
+                                    DEVELOPER PLATFORM
+                                </p>
+
+                                <h3>
+                                    Build. Ship.
+                                    <span>Grow.</span>
+                                </h3>
+
+                                <div class="preview-line"></div>
+                                <div class="preview-line short"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-tag">
+                            WEB DEVELOPMENT
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <div class="project-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Fundz Developer Platform
+                            </h3>
+
+                            <p>
+                                A modern developer-focused web experience
+                                designed around technology and growth.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 03 -->
+
+                <article class="project">
+
+                    <div class="project-image design-preview">
+
+                        <div class="design-grid">
+
+                            <div class="design-box large">
+                                F
+                            </div>
+
+                            <div class="design-box">
+                                UI
+                            </div>
+
+                            <div class="design-box">
+                                UX
+                            </div>
+
+                            <div class="design-box wide">
+                                FUNDZ
+                            </div>
+
+                        </div>
+
+                        <div class="project-tag">
+                            UI/UX DESIGN
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <div class="project-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Digital Interface System
+                            </h3>
+
+                            <p>
+                                A flexible interface direction focused on
+                                clarity, consistency and modern interaction.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            class="about section"
+            id="about"
+        >
+
+            <div class="container about-grid">
+
+                <div class="about-title">
+
+                    <p class="eyebrow">
+                        ABOUT FUNDZ
+                    </p>
+
+                    <h2>
+                        Creative thinking.
+                        <span>Technical execution.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <p class="large-text">
+                        Fundz is a digital creative studio focused on
+                        building meaningful online experiences for
+                        modern brands.
+                    </p>
+
+                    <p>
+                        I’m Peter Ejiiro, the founder behind Fundz.
+                        My approach combines visual design, web
+                        development and brand thinking to create
+                        websites and digital products that feel
+                        professional and purposeful.
+                    </p>
+
+                    <div class="about-stats">
+
+                        <div>
+                            <strong>03</strong>
+                            <span>Core Services</span>
+                        </div>
+
+                        <div>
+                            <strong>100%</strong>
+                            <span>Creative Focus</span>
+                        </div>
+
+                        <div>
+                            <strong>24/7</strong>
+                            <span>Digital Presence</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROCESS ================= -->
+
+        <section class="process section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        MY PROCESS
+                    </p>
+
+                    <h2>
+                        From idea to
+                        <span>launch.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-step">
+
+                        <span>01</span>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            Understand the brand, goals,
+                            audience and project requirements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>02</span>
+
+                        <h3>
+                            Design
+                        </h3>
+
+                        <p>
+                            Turn ideas into a clear visual
+                            direction and user experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>03</span>
+
+                        <h3>
+                            Build
+                        </h3>
+
+                        <p>
+                            Develop a responsive, polished
+                            and performance-focused experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <span>04</span>
+
+                        <h3>
+                            Launch
+                        </h3>
+
+                        <p>
+                            Test, deploy and help your digital
+                            presence move forward.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section
+            class="contact section"
+            id="contact"
+        >
+
+            <div class="container contact-grid">
+
+                <div class="contact-copy">
+
+                    <p class="eyebrow">
+                        START A PROJECT
+                    </p>
+
+                    <h2>
+                        Let's build something
+                        <span>great.</span>
+                    </h2>
+
+                    <p>
+                        Have a website, brand or digital product
+                        in mind? Tell me what you're working on
+                        and let's start the conversation.
+                    </p>
+
+
+                    <div class="contact-links">
+
+                        <a
+                            href="mailto:peterejiro34@gmail.com"
+                        >
+                            <span>Email</span>
+                            peterejiro34@gmail.com
+                        </a>
+
+                        <a
+                            href="https://wa.me/2347048595463"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>WhatsApp</span>
+                            +234 704 859 5463
+                        </a>
+
+                        <a
+                            href="https://x.com/fundz34"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>X</span>
+                            @fundz34
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    method="POST"
+                >
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Peter Ejiiro"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            Service
+                        </label>
+
+                        <select
+                            id="service"
+                            name="service"
+                            required
+                        >
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option value="Web Development">
+                                Web Development
+                            </option>
+
+                            <option value="UI/UX Design">
+                                UI/UX Design
+                            </option>
+
+                            <option value="Brand Identity">
+                                Brand Identity
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Project Details
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="7"
+                            placeholder="Tell me about your project..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Fundz Project Enquiry"
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary form-submit"
+                    >
+                        Send Project Enquiry
+                        <span>→</span>
+                    </button>
+
+
+                    <p
+                        class="form-status"
+                        id="formStatus"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div>
+
+                <a
+                    href="#home"
+                    class="footer-logo"
+                >
+                    Fundz
+                </a>
 
                 <p>
-                    Modern product concept for
-                    developers and digital teams.
+                    Web Development • UI/UX • Branding
                 </p>
 
             </div>
 
-        </article>
 
+            <div class="footer-links">
 
-        <!-- PROJECT 3 -->
-
-        <article class="project">
-
-            <div class="media creative">
-
-                <strong>
-                    FUNDZ
-                </strong>
-
-                <small>
-                    DIGITAL CREATIVE STUDIO
-                </small>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
 
             </div>
 
 
-            <div class="project-info">
-
-                <h3>
-                    <em>03</em>
-                    Creative Direction
-                </h3>
-
-                <p>
-                    Graphic and digital creative
-                    direction.
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- ================= TOOLKIT ================= -->
-
-<section class="section toolkit">
-
-    <p class="tag">
-        04 / TOOLKIT
-    </p>
-
-
-    <div class="tool-grid">
-
-        <div>
-
-            <h2>
-                Built with
-                <br>
-                <span>modern tools.</span>
-            </h2>
-
-            <p>
-                These tools can grow with the project
-                and support the Fundz workflow.
+            <p class="copyright">
+                © <span id="year"></span> Fundz.
+                All rights reserved.
             </p>
 
         </div>
 
+    </footer>
 
-        <div class="tools">
 
-            <span>HTML5</span>
-
-            <span>CSS3</span>
-
-            <span>JavaScript</span>
-
-            <span>REST API</span>
-
-            <span>GitHub</span>
-
-            <span>Figma</span>
-
-            <span>Responsive Design</span>
-
-            <span>Real-time Data</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROCESS ================= -->
-
-<section class="section process" id="process">
-
-    <p class="tag">
-        05 / PROCESS
-    </p>
-
-
-    <div class="process-grid">
-
-        <h2>
-            Simple process.
-            <br>
-            <span>Strong results.</span>
-        </h2>
-
-
-        <div class="steps">
-
-            <div>
-
-                <b>01</b>
-
-                <h3>
-                    Discover
-                </h3>
-
-                <p>
-                    Goals, audience, content and
-                    project direction.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <b>02</b>
-
-                <h3>
-                    Design
-                </h3>
-
-                <p>
-                    Structure, visuals and user
-                    experience.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <b>03</b>
-
-                <h3>
-                    Build
-                </h3>
-
-                <p>
-                    Responsive development and
-                    testing.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <b>04</b>
-
-                <h3>
-                    Launch
-                </h3>
-
-                <p>
-                    Refinement and publishing online.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="section contact" id="contact">
-
-    <div class="contact-box">
-
-        <p class="tag">
-            06 / CONTACT
-        </p>
-
-
-        <h2>
-            Let's build
-            <br>
-            <span>something useful.</span>
-        </h2>
-
-
-        <p class="contact-lead">
-            Have a website, app, brand or idea in mind?
-            Tell me what you're working on.
-        </p>
-
-
-        <div class="contact-links">
-
-            <a
-                href="https://wa.me/2347048595463"
-                target="_blank"
-            >
-
-                <small>
-                    WHATSAPP
-                </small>
-
-                <strong>
-                    +234 704 859 5463
-                </strong>
-
-                ↗
-
-            </a>
-
-
-            <a href="mailto:peterejiro34@gmail.com">
-
-                <small>
-                    EMAIL
-                </small>
-
-                <strong>
-                    peterejiro34@gmail.com
-                </strong>
-
-                ↗
-
-            </a>
-
-
-            <a
-                href="https://x.com/fundz34"
-                target="_blank"
-            >
-
-                <small>
-                    X / TWITTER
-                </small>
-
-                <strong>
-                    @fundz34
-                </strong>
-
-                ↗
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <a href="#home" class="brand">
-
-        <b class="logo">
-            F
-        </b>
-
-        <span>
-            <strong>Fundz</strong>
-            <small>DIGITAL CREATIVE STUDIO</small>
-        </span>
-
-    </a>
-
-
-    <span>
-        © 2026 Fundz. All rights reserved.
-    </span>
-
-
-    <a href="#home">
-        Back to top ↑
-    </a>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
