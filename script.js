@@ -1,39 +1,57 @@
-/* =========================================================
-   FUNDZ V3
-   JAVASCRIPT
-========================================================= */
+/* =========================================
+   FUNDZ V4 JAVASCRIPT
+========================================= */
 
 
-/* ================= MOBILE MENU ================= */
+/* =========================================
+   MOBILE MENU
+========================================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
 
-if (menuToggle && mobileNav) {
 
-    menuToggle.addEventListener("click", () => {
+if (menuButton && mobileMenu) {
+
+    menuButton.addEventListener("click", () => {
 
         const isOpen =
-            mobileNav.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
 
-        menuToggle.setAttribute(
+        menuButton.setAttribute(
             "aria-expanded",
             isOpen
         );
 
+
+        if (isOpen) {
+
+            menuButton.classList.add("open");
+
+        } else {
+
+            menuButton.classList.remove("open");
+
+        }
+
     });
 
 
+    /* CLOSE MENU WHEN LINK IS CLICKED */
+
     const mobileLinks =
-        mobileNav.querySelectorAll("a");
+        mobileMenu.querySelectorAll("a");
+
 
     mobileLinks.forEach((link) => {
 
         link.addEventListener("click", () => {
 
-            mobileNav.classList.remove("active");
+            mobileMenu.classList.remove("active");
 
-            menuToggle.setAttribute(
+            menuButton.classList.remove("open");
+
+            menuButton.setAttribute(
                 "aria-expanded",
                 "false"
             );
@@ -45,122 +63,91 @@ if (menuToggle && mobileNav) {
 }
 
 
-/* ================= CURRENT YEAR ================= */
+/* =========================================
+   SMOOTH SCROLL
+========================================= */
 
-const yearElement =
-    document.getElementById("year");
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach((link) => {
 
-if (yearElement) {
+    link.addEventListener("click", function (event) {
 
-    yearElement.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* ================= CONTACT FORM ================= */
-
-const contactForm =
-    document.getElementById("contactForm");
-
-const formStatus =
-    document.getElementById("formStatus");
+        const targetId =
+            this.getAttribute("href");
 
 
-if (contactForm) {
+        if (
+            !targetId ||
+            targetId === "#"
+        ) {
 
-    contactForm.addEventListener(
-        "submit",
-        async function (event) {
+            return;
+
+        }
+
+
+        const target =
+            document.querySelector(targetId);
+
+
+        if (target) {
 
             event.preventDefault();
 
-            const submitButton =
-                contactForm.querySelector(
-                    'button[type="submit"]'
-                );
 
-            const originalText =
-                submitButton.innerHTML;
+            const header =
+                document.querySelector(".site-header");
 
 
-            submitButton.disabled = true;
-
-            submitButton.innerHTML =
-                "Sending...";
-
-
-            const formData =
-                new FormData(contactForm);
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
 
 
-            try {
-
-                const response =
-                    await fetch(
-                        contactForm.action,
-                        {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "Accept":
-                                    "application/json"
-                            }
-                        }
-                    );
+            const targetPosition =
+                target.getBoundingClientRect().top +
+                window.pageYOffset -
+                headerHeight;
 
 
-                if (response.ok) {
+            window.scrollTo({
 
-                    formStatus.textContent =
-                        "Thank you! Your project enquiry has been sent.";
+                top: targetPosition,
 
-                    formStatus.style.color =
-                        "#63dcc9";
+                behavior: "smooth"
 
-                    contactForm.reset();
-
-                } else {
-
-                    throw new Error(
-                        "Form submission failed."
-                    );
-
-                }
-
-            } catch (error) {
-
-                formStatus.textContent =
-                    "Something went wrong. Please try again or contact Fundz directly.";
-
-                formStatus.style.color =
-                    "#ff8b8b";
-
-            }
-
-
-            submitButton.disabled = false;
-
-            submitButton.innerHTML =
-                originalText;
+            });
 
         }
-    );
 
-}
+    });
+
+});
 
 
-/* ================= SCROLL REVEAL ================= */
+/* =========================================
+   SCROLL REVEAL
+========================================= */
 
 const revealElements =
     document.querySelectorAll(
-        ".service-card, .project, .process-step, .about-content, .contact-form"
+        ".service-card, .project-card, .book-card, .about-grid, .contact-form"
     );
 
 
-const observer =
+revealElements.forEach((element) => {
+
+    element.classList.add("reveal");
+
+});
+
+
+const revealObserver =
     new IntersectionObserver(
-        (entries) => {
+
+        (entries, observer) => {
 
             entries.forEach((entry) => {
 
@@ -179,132 +166,224 @@ const observer =
             });
 
         },
+
         {
-            threshold: 0.1
+            threshold: 0.12
         }
+
     );
 
 
 revealElements.forEach((element) => {
 
-    element.classList.add(
-        "reveal"
-    );
-
-    observer.observe(element);
+    revealObserver.observe(element);
 
 });
 
 
-/* ================= SMOOTH ANCHOR OFFSET ================= */
+/* =========================================
+   CONTACT FORM
+========================================= */
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach((link) => {
+const contactForm =
+    document.getElementById("contactForm");
 
-        link.addEventListener(
-            "click",
-            function (event) {
+const formStatus =
+    document.getElementById("formStatus");
 
-                const targetId =
-                    this.getAttribute("href");
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
+if (contactForm) {
 
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
 
-                if (!target) {
-                    return;
-                }
+            event.preventDefault();
 
-                event.preventDefault();
 
-                const header =
-                    document.querySelector(
-                        ".site-header"
-                    );
+            const name =
+                document.getElementById("name").value.trim();
 
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
 
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top +
-                    window.scrollY -
-                    headerHeight;
+            const email =
+                document.getElementById("email").value.trim();
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
+
+            const service =
+                document.getElementById("service").value;
+
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            if (
+                !name ||
+                !email ||
+                !service ||
+                !message
+            ) {
+
+                formStatus.textContent =
+                    "Please complete all fields.";
+
+                return;
 
             }
-        );
 
-    });
-// ========================================
-// FUNDZ PROJECT ENQUIRY
-// ========================================
 
-const projectForm = document.getElementById("projectForm");
+            /*
+                We use mailto here so the form
+                works on a static Render website
+                without requiring a backend.
+            */
 
-if (projectForm) {
 
-    projectForm.addEventListener("submit", function(event) {
+            const subject =
+                encodeURIComponent(
+                    `Fundz Project Enquiry - ${service}`
+                );
 
-        event.preventDefault();
 
-        const projectType =
-            document.getElementById("projectType").value;
+            const body =
+                encodeURIComponent(
+                    `Hello Fundz,
 
-        const clientName =
-            document.getElementById("clientName").value;
-
-        const clientEmail =
-            document.getElementById("clientEmail").value;
-
-        const projectMessage =
-            document.getElementById("projectMessage").value;
-
-        const phoneNumber = "2347048595463";
-
-        const message =
-`Hello Fundz 👋
-
-I would like to start a project.
-
-Name:
-${clientName}
-
-Email:
-${clientEmail}
-
-Project Type:
-${projectType}
+Name: ${name}
+Email: ${email}
+Service: ${service}
 
 Project Details:
-${projectMessage}
+${message}
 
-I found Fundz through your website.`;
+Sent from the Fundz website.`
+                );
 
-        const whatsappURL =
-            "https://wa.me/2347048595463"
-            phoneNumber 
-            "?text=" 
-            encodeURIComponent(message);
 
-        window.open(whatsappURL, "_blank");
+            const emailLink =
+                `mailto:peterejiro34@gmail.com?subject=${subject}&body=${body}`;
 
-    });
+
+            formStatus.textContent =
+                "Opening your email app...";
+
+
+            window.location.href =
+                emailLink;
+
+        }
+    );
 
 }
+
+
+/* =========================================
+   CURRENT YEAR
+========================================= */
+
+const year =
+    document.getElementById("year");
+
+
+if (year) {
+
+    year.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
+
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
+
+const navLinks =
+    document.querySelectorAll(
+        ".desktop-nav a"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        let currentSection = "";
+
+
+        sections.forEach((section) => {
+
+            const sectionTop =
+                section.offsetTop - 180;
+
+
+            const sectionHeight =
+                section.offsetHeight;
+
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY <
+                    sectionTop + sectionHeight
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach((link) => {
+
+            link.classList.remove(
+                "active"
+            );
+
+
+            if (
+                link.getAttribute("href") ===
+                `#${currentSection}`
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
+    }
+);
+
+
+/* =========================================
+   IMAGE ERROR HANDLING
+========================================= */
+
+document.querySelectorAll(
+    "img"
+).forEach((image) => {
+
+    image.addEventListener(
+        "error",
+        () => {
+
+            image.style.display =
+                "none";
+
+            console.warn(
+                `Image could not be loaded: ${image.src}`
+            );
+
+        }
+    );
+
+});
