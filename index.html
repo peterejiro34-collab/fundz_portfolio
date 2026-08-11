@@ -1,920 +1,1126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Fundz — Web Development, UI/UX Design and Branding by Peter Ejiiro."
-    >
-
-    <meta
-        name="theme-color"
-        content="#050a24"
-    >
-
-    <title>Fundz | Digital Creative Studio</title>
-
-    <link
-        rel="stylesheet"
-        href="styles.css"
-    >
-</head>
-
-<body>
-
-    <!-- ================= HEADER ================= -->
-
-    <header class="site-header">
-
-        <div class="container nav-container">
-
-            <a
-                href="#home"
-                class="logo"
-            >
-                <span class="logo-icon">F</span>
-
-                <span class="logo-text">
-                    <strong>Fundz</strong>
-                    <small>DIGITAL CREATIVE STUDIO</small>
-                </span>
-            </a>
-
-            <nav
-                class="desktop-nav"
-                aria-label="Main navigation"
-            >
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </div>
-
-        <!-- Mobile Navigation -->
-
-        <nav
-            class="mobile-nav"
-            id="mobileNav"
-            aria-label="Mobile navigation"
-        >
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-    </header>
+/* =========================================
+   FUNDZ V3
+   DIGITAL CREATIVE STUDIO
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #05091f;
+  color: #f7f8ff;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 9, 31, 0.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(130, 150, 210, 0.15);
+}
+
+.nav-container {
+  width: min(1200px, 92%);
+  margin: auto;
+  min-height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+
+/* BRAND */
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-    <main>
-
-        <!-- ================= HERO ================= -->
-
-        <section
-            class="hero"
-            id="home"
-        >
+.brand-icon {
+  width: 70px;
+  height: 70px;
 
-            <div class="container hero-grid">
+  border-radius: 22px;
 
-                <div class="hero-content">
+  display: grid;
+  place-items: center;
 
-                    <p class="eyebrow">
-                        WEB DEVELOPMENT • UI/UX • BRANDING
-                    </p>
+  background:
+    linear-gradient(
+      135deg,
+      #4c8cf7,
+      #69d8cb
+    );
 
-                    <h1>
-                        Building digital
-                        <span>experiences</span>
-                        that move brands forward.
-                    </h1>
+  box-shadow:
+    0 12px 40px rgba(65, 180, 220, 0.18);
+}
 
-                    <p class="hero-description">
-                        I'm <strong>Peter Ejiiro</strong>, founder of Fundz.
-                        I design and build modern websites and digital
-                        experiences that look great, perform fast and help
-                        brands grow online.
-                    </p>
+.brand-icon span {
+  font-size: 40px;
+  font-weight: 800;
+  color: white;
+}
 
-                    <div class="hero-buttons">
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
 
-                        <a
-                            href="#work"
-                            class="btn btn-primary"
-                        >
-                            View My Work
-                            <span>→</span>
-                        </a>
+.brand-text strong {
+  font-size: 38px;
+  line-height: 1;
+}
 
-                        <a
-                            href="#contact"
-                            class="btn btn-secondary"
-                        >
-                            Start a Project
-                        </a>
+.brand-text small {
+  margin-top: 8px;
+  color: #65cfe0;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
 
-                    </div>
 
-                    <div class="hero-services">
+/* DESKTOP NAV */
 
-                        <div>
-                            <strong>01</strong>
-                            <span>Web Development</span>
-                        </div>
+.desktop-nav {
+  display: flex;
+  gap: 38px;
+}
 
-                        <div>
-                            <strong>02</strong>
-                            <span>UI/UX Design</span>
-                        </div>
+.desktop-nav a {
+  color: #aab5d5;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
 
-                        <div>
-                            <strong>03</strong>
-                            <span>Brand Identity</span>
-                        </div>
+.desktop-nav a:hover {
+  color: #65d8c9;
+}
 
-                    </div>
 
-                </div>
+/* MENU BUTTON */
 
+.menu-button {
+  display: none;
 
-                <div class="hero-visual">
+  width: 52px;
+  height: 52px;
 
-                    <div class="hero-card">
+  border: 0;
+  background: transparent;
 
-                        <div class="card-glow"></div>
+  cursor: pointer;
 
-                        <div class="card-window">
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+}
 
-                            <div class="window-top">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+.menu-button span {
+  display: block;
 
-                                <small>fundz.dev</small>
-                            </div>
+  width: 34px;
+  height: 3px;
 
-                            <div class="window-content">
+  background: white;
 
-                                <p>DEVELOPER PLATFORM</p>
+  transition: 0.3s ease;
+}
 
-                                <h2>
-                                    Build.
-                                    <br>
-                                    Ship.
-                                    <span>Grow.</span>
-                                </h2>
 
-                                <div class="fake-lines">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
+/* MOBILE MENU */
 
-                            </div>
+.mobile-menu {
+  display: none;
 
-                        </div>
+  background: #05091f;
 
-                    </div>
+  border-top: 1px solid rgba(130, 150, 210, 0.12);
+}
 
-                </div>
+.mobile-menu.active {
+  display: block;
+}
 
-            </div>
+.mobile-menu a {
+  display: block;
 
-        </section>
+  width: 92%;
+  margin: auto;
 
+  padding: 28px 10px;
 
-        <!-- ================= SERVICES ================= -->
+  border-bottom: 1px solid rgba(100, 120, 180, 0.15);
 
-        <section
-            class="services section"
-            id="services"
-        >
+  color: #c3cbe3;
 
-            <div class="container">
+  font-size: 25px;
 
-                <div class="section-heading">
+  transition: 0.3s ease;
+}
 
-                    <p class="eyebrow">
-                        WHAT I DO
-                    </p>
+.mobile-menu a:hover {
+  color: #65d8c9;
+  padding-left: 20px;
+}
 
-                    <h2>
-                        Digital solutions
-                        <span>built to perform.</span>
-                    </h2>
 
-                    <p>
-                        From strategy and design to development and launch,
-                        Fundz helps turn ideas into polished digital products.
-                    </p>
+/* =========================================
+   GENERAL
+========================================= */
 
-                </div>
+.section {
+  width: min(1200px, 92%);
+  margin: auto;
+  padding: 150px 0;
+}
 
+.eyebrow {
+  color: #62d7c9;
 
-                <div class="service-grid">
+  font-size: 15px;
+  font-weight: 700;
 
-                    <article class="service-card">
+  letter-spacing: 4px;
 
-                        <div class="service-number">
-                            01
-                        </div>
+  margin-bottom: 28px;
+}
 
-                        <div class="service-icon">
-                            &lt;/&gt;
-                        </div>
+.section-heading {
+  max-width: 800px;
+  margin-bottom: 70px;
+}
 
-                        <h3>
-                            Web Development
-                        </h3>
+.section-heading h2,
+.about-section h2 {
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+}
 
-                        <p>
-                            Fast, responsive and modern websites built
-                            for businesses, creators and digital brands.
-                        </p>
+.section-heading h2 span,
+.about-section h2 span {
+  color: #65d8c9;
+}
 
-                        <ul>
-                            <li>Business websites</li>
-                            <li>Landing pages</li>
-                            <li>Portfolio websites</li>
-                            <li>Responsive development</li>
-                        </ul>
 
-                    </article>
+/* =========================================
+   HERO
+========================================= */
 
+.hero {
+  width: min(1200px, 92%);
+  margin: auto;
 
-                    <article class="service-card">
+  min-height: 780px;
 
-                        <div class="service-number">
-                            02
-                        </div>
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-                        <div class="service-icon">
-                            ◈
-                        </div>
+  padding: 120px 0 80px;
+}
 
-                        <h3>
-                            UI/UX Design
-                        </h3>
+.hero-content {
+  max-width: 950px;
+}
 
-                        <p>
-                            Clean interfaces and user experiences designed
-                            around clarity, usability and conversion.
-                        </p>
+.hero h1 {
+  font-size: clamp(58px, 8vw, 108px);
+  line-height: 0.95;
+  letter-spacing: -6px;
 
-                        <ul>
-                            <li>Website UI design</li>
-                            <li>Mobile interfaces</li>
-                            <li>Wireframes</li>
-                            <li>Design systems</li>
-                        </ul>
+  margin-bottom: 45px;
+}
 
-                    </article>
+.hero h1 span {
+  color: #65d8c9;
+}
 
+.hero-description {
+  max-width: 780px;
 
-                    <article class="service-card">
+  color: #9da8c9;
 
-                        <div class="service-number">
-                            03
-                        </div>
+  font-size: clamp(20px, 2vw, 27px);
 
-                        <div class="service-icon">
-                            ✦
-                        </div>
+  line-height: 1.7;
 
-                        <h3>
-                            Brand Identity
-                        </h3>
+  margin-bottom: 45px;
+}
 
-                        <p>
-                            Visual identities that give businesses a
-                            recognizable and professional digital presence.
-                        </p>
+.hero-description strong {
+  color: white;
+}
 
-                        <ul>
-                            <li>Brand direction</li>
-                            <li>Logo concepts</li>
-                            <li>Visual systems</li>
-                            <li>Digital brand assets</li>
-                        </ul>
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-                    </article>
+.button {
+  display: inline-flex;
 
-                </div>
+  min-height: 62px;
 
-            </div>
+  padding: 0 34px;
 
-        </section>
+  align-items: center;
+  justify-content: center;
 
+  border-radius: 13px;
 
-        <!-- ================= WORK ================= -->
+  font-weight: 700;
+  font-size: 17px;
 
-        <section
-            class="work section"
-            id="work"
-        >
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
 
-            <div class="container">
+.button:hover {
+  transform: translateY(-4px);
+}
 
-                <div class="section-heading work-heading">
+.button-primary {
+  background: #65d8c9;
+  color: #06101f;
+}
 
-                    <div>
+.button-secondary {
+  border: 1px solid #27345e;
+  color: white;
+}
 
-                        <p class="eyebrow">
-                            SELECTED WORK
-                        </p>
+.button-secondary:hover {
+  background: #101a3b;
+}
 
-                        <h2>
-                            Projects that
-                            <span>tell the story.</span>
-                        </h2>
+.hero-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-                    </div>
+  gap: 30px;
 
-                    <p>
-                        A selection of digital experiences,
-                        brand systems and creative projects.
-                    </p>
+  margin-top: 120px;
+}
 
-                </div>
+.hero-services div {
+  border-top: 1px solid #27345e;
+  padding-top: 22px;
+}
 
+.hero-services strong {
+  display: block;
 
-                <!-- Project 01 -->
+  color: #65d8c9;
 
-                <article class="project">
+  font-size: 28px;
 
-                    <div class="project-image">
+  margin-bottom: 5px;
+}
 
-                        <img
-                            src="assets/fundz-brand-card.jpg"
-                            alt="Fundz brand identity"
-                            loading="lazy"
-                        >
+.hero-services span {
+  color: #687597;
+}
 
-                        <div class="project-tag">
-                            BRAND IDENTITY
-                        </div>
 
-                    </div>
+/* =========================================
+   SERVICES
+========================================= */
 
+.services-section {
+  border-top: 1px solid rgba(120, 140, 190, 0.12);
+}
 
-                    <div class="project-info">
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
 
-                        <div class="project-number">
-                            01
-                        </div>
+.service-card {
+  min-height: 390px;
 
-                        <div>
+  padding: 38px;
 
-                            <h3>
-                                Fundz Brand System
-                            </h3>
+  border: 1px solid #1d2a51;
+  border-radius: 24px;
 
-                            <p>
-                                Technology-driven visual identity for
-                                the Fundz digital brand.
-                            </p>
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 35, 75, 0.7),
+      rgba(5, 9, 31, 0.7)
+    );
 
-                        </div>
+  transition: 0.35s ease;
+}
 
-                    </div>
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #3c618f;
+}
 
-                </article>
+.service-number {
+  color: #65d8c9;
 
+  font-size: 18px;
+  font-weight: 700;
 
-                <!-- Project 02 -->
+  margin-bottom: 70px;
+}
 
-                <article class="project project-reverse">
+.service-card h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
-                    <div class="project-image website-preview">
+.service-card p {
+  color: #8895b7;
 
-                        <div class="preview-browser">
+  font-size: 17px;
 
-                            <div class="preview-top">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+  margin-bottom: 28px;
+}
 
-                                <small>fundz.dev</small>
-                            </div>
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-                            <div class="preview-body">
+.service-tags span {
+  border: 1px solid #26355d;
 
-                                <p>
-                                    DEVELOPER PLATFORM
-                                </p>
+  padding: 7px 12px;
 
-                                <h3>
-                                    Build. Ship.
-                                    <span>Grow.</span>
-                                </h3>
+  border-radius: 100px;
 
-                                <div class="preview-line"></div>
-                                <div class="preview-line short"></div>
+  color: #8c9bc0;
 
-                            </div>
+  font-size: 13px;
+}
 
-                        </div>
 
-                        <div class="project-tag">
-                            WEB DEVELOPMENT
-                        </div>
+/* =========================================
+   WORK
+========================================= */
 
-                    </div>
+.work-section {
+  border-top: 1px solid rgba(120, 140, 190, 0.12);
+}
 
+.project-card {
+  margin-bottom: 130px;
+}
 
-                    <div class="project-info">
+.project-image,
+.project-visual {
+  width: 100%;
+  min-height: 600px;
 
-                        <div class="project-number">
-                            02
-                        </div>
+  position: relative;
 
-                        <div>
+  overflow: hidden;
 
-                            <h3>
-                                Fundz Developer Platform
-                            </h3>
+  border-radius: 28px;
 
-                            <p>
-                                A modern developer-focused web experience
-                                designed around technology and growth.
-                            </p>
+  border: 1px solid #26375f;
 
-                        </div>
+  background: #0a1230;
+}
 
-                    </div>
+.project-image img {
+  width: 100%;
+  height: 600px;
 
-                </article>
+  object-fit: cover;
+}
 
+.image-fallback {
+  display: none;
 
-                <!-- Project 03 -->
+  width: 100%;
+  height: 600px;
 
-                <article class="project">
+  align-items: center;
+  justify-content: center;
 
-                    <div class="project-image design-preview">
+  color: #65d8c9;
 
-                        <div class="design-grid">
+  font-size: 32px;
 
-                            <div class="design-box large">
-                                F
-                            </div>
+  background:
+    linear-gradient(
+      135deg,
+      #101d48,
+      #0b4160,
+      #071328
+    );
+}
 
-                            <div class="design-box">
-                                UI
-                            </div>
+.project-label {
+  position: absolute;
 
-                            <div class="design-box">
-                                UX
-                            </div>
+  bottom: 30px;
+  left: 30px;
 
-                            <div class="design-box wide">
-                                FUNDZ
-                            </div>
+  padding: 14px 20px;
 
-                        </div>
+  background: rgba(2, 8, 27, 0.85);
 
-                        <div class="project-tag">
-                            UI/UX DESIGN
-                        </div>
+  border-radius: 12px;
 
-                    </div>
+  color: #65d8c9;
 
+  font-size: 13px;
+  letter-spacing: 1px;
+}
 
-                    <div class="project-info">
+.project-info {
+  display: grid;
+  grid-template-columns: 80px 1fr;
 
-                        <div class="project-number">
-                            03
-                        </div>
+  gap: 30px;
 
-                        <div>
+  margin-top: 30px;
+}
 
-                            <h3>
-                                Digital Interface System
-                            </h3>
+.project-number {
+  color: #65d8c9;
 
-                            <p>
-                                A flexible interface direction focused on
-                                clarity, consistency and modern interaction.
-                            </p>
+  font-size: 18px;
+  font-weight: 700;
+}
 
-                        </div>
+.project-info h3 {
+  font-size: clamp(32px, 4vw, 52px);
 
-                    </div>
+  line-height: 1;
 
-                </article>
+  margin-bottom: 15px;
+}
 
-            </div>
+.project-info p {
+  max-width: 600px;
 
-        </section>
+  color: #7582a5;
 
+  font-size: 18px;
+}
 
-        <!-- ================= ABOUT ================= -->
 
-        <section
-            class="about section"
-            id="about"
-        >
+/* =========================================
+   DEVELOPER VISUAL
+========================================= */
 
-            <div class="container about-grid">
+.developer-visual {
+  padding: 80px;
 
-                <div class="about-title">
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-                    <p class="eyebrow">
-                        ABOUT FUNDZ
-                    </p>
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #17447b,
+      #0b1739 60%,
+      #07102b
+    );
+}
 
-                    <h2>
-                        Creative thinking.
-                        <span>Technical execution.</span>
-                    </h2>
+.browser-window {
+  width: min(750px, 100%);
 
-                </div>
+  border-radius: 16px;
 
+  overflow: hidden;
 
-                <div class="about-content">
+  background: #061027;
 
-                    <p class="large-text">
-                        Fundz is a digital creative studio focused on
-                        building meaningful online experiences for
-                        modern brands.
-                    </p>
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.35);
+}
 
-                    <p>
-                        I’m Peter Ejiiro, the founder behind Fundz.
-                        My approach combines visual design, web
-                        development and brand thinking to create
-                        websites and digital products that feel
-                        professional and purposeful.
-                    </p>
+.browser-top {
+  height: 48px;
 
-                    <div class="about-stats">
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-                        <div>
-                            <strong>03</strong>
-                            <span>Core Services</span>
-                        </div>
+  padding: 0 18px;
 
-                        <div>
-                            <strong>100%</strong>
-                            <span>Creative Focus</span>
-                        </div>
+  background: #122b58;
 
-                        <div>
-                            <strong>24/7</strong>
-                            <span>Digital Presence</span>
-                        </div>
+  color: #60739a;
+}
 
-                    </div>
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
 
-                </div>
+.browser-dots span {
+  width: 7px;
+  height: 7px;
 
-            </div>
+  border-radius: 50%;
 
-        </section>
+  background: #60739a;
+}
 
+.browser-content {
+  padding: 80px 55px;
+}
 
-        <!-- ================= PROCESS ================= -->
+.browser-content p {
+  color: #31d5c2;
 
-        <section class="process section">
+  font-size: 13px;
+  letter-spacing: 2px;
 
-            <div class="container">
+  margin-bottom: 30px;
+}
 
-                <div class="section-heading">
+.browser-content h3 {
+  font-size: clamp(48px, 6vw, 78px);
 
-                    <p class="eyebrow">
-                        MY PROCESS
-                    </p>
+  line-height: 0.95;
 
-                    <h2>
-                        From idea to
-                        <span>launch.</span>
-                    </h2>
+  margin-bottom: 50px;
+}
 
-                </div>
+.browser-content h3 span {
+  display: block;
 
+  color: #2fd7c2;
+}
 
-                <div class="process-grid">
+.fake-line {
+  height: 9px;
 
-                    <div class="process-step">
+  background: #244778;
 
-                        <span>01</span>
+  border-radius: 10px;
 
-                        <h3>
-                            Discover
-                        </h3>
+  margin-bottom: 12px;
+}
 
-                        <p>
-                            Understand the brand, goals,
-                            audience and project requirements.
-                        </p>
+.fake-line.long {
+  width: 90%;
+}
 
-                    </div>
+.fake-line.medium {
+  width: 65%;
+}
 
+.fake-line.short {
+  width: 45%;
+}
 
-                    <div class="process-step">
 
-                        <span>02</span>
+/* =========================================
+   STUDIO VISUAL
+========================================= */
 
-                        <h3>
-                            Design
-                        </h3>
+.studio-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-                        <p>
-                            Turn ideas into a clear visual
-                            direction and user experience.
-                        </p>
+  background:
+    linear-gradient(
+      135deg,
+      #112d69,
+      #08415e,
+      #091229
+    );
+}
 
-                    </div>
+.studio-card {
+  width: 70%;
+  min-height: 430px;
 
+  padding: 55px;
 
-                    <div class="process-step">
+  position: relative;
 
-                        <span>03</span>
+  overflow: hidden;
 
-                        <h3>
-                            Build
-                        </h3>
+  border-radius: 22px;
 
-                        <p>
-                            Develop a responsive, polished
-                            and performance-focused experience.
-                        </p>
+  background: #07112d;
 
-                    </div>
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.3);
+}
 
+.studio-card p {
+  color: #65d8c9;
 
-                    <div class="process-step">
+  letter-spacing: 4px;
+}
 
-                        <span>04</span>
+.studio-card h3 {
+  max-width: 500px;
 
-                        <h3>
-                            Launch
-                        </h3>
+  font-size: clamp(45px, 6vw, 80px);
 
-                        <p>
-                            Test, deploy and help your digital
-                            presence move forward.
-                        </p>
+  line-height: 0.95;
 
-                    </div>
+  margin-top: 80px;
+}
 
-                </div>
+.studio-card h3 span {
+  color: #65d8c9;
+}
 
-            </div>
+.studio-circle {
+  position: absolute;
 
-        </section>
+  width: 300px;
+  height: 300px;
 
+  border-radius: 50%;
 
-        <!-- ================= CONTACT ================= -->
+  right: -120px;
+  bottom: -120px;
 
-        <section
-            class="contact section"
-            id="contact"
-        >
+  background:
+    linear-gradient(
+      135deg,
+      #66d8c9,
+      #4d82f4
+    );
+}
 
-            <div class="container contact-grid">
 
-                <div class="contact-copy">
+/* =========================================
+   ABOUT
+========================================= */
 
-                    <p class="eyebrow">
-                        START A PROJECT
-                    </p>
+.about-section {
+  border-top: 1px solid rgba(120, 140, 190, 0.12);
+}
 
-                    <h2>
-                        Let's build something
-                        <span>great.</span>
-                    </h2>
+.about-grid {
+  display: grid;
 
-                    <p>
-                        Have a website, brand or digital product
-                        in mind? Tell me what you're working on
-                        and let's start the conversation.
-                    </p>
+  grid-template-columns: 1fr 1fr;
 
+  gap: 80px;
+}
 
-                    <div class="contact-links">
+.about-text {
+  color: #8995b6;
 
-                        <a
-                            href="mailto:peterejiro34@gmail.com"
-                        >
-                            <span>Email</span>
-                            peterejiro34@gmail.com
-                        </a>
+  font-size: 21px;
 
-                        <a
-                            href="https://wa.me/2347048595463"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            <span>WhatsApp</span>
-                            +234 704 859 5463
-                        </a>
+  line-height: 1.8;
+}
 
-                        <a
-                            href="https://x.com/fundz34"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            <span>X</span>
-                            @fundz34
-                        </a>
+.about-text p + p {
+  margin-top: 30px;
+}
 
-                    </div>
+.about-text strong {
+  color: white;
+}
 
-                </div>
+.about-stats {
+  margin-top: 100px;
 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-                <form
-                    class="contact-form"
-                    id="contactForm"
-                    action="https://formspree.io/f/YOUR_FORM_ID"
-                    method="POST"
-                >
+  border-top: 1px solid #27345e;
+}
 
-                    <div class="form-row">
+.about-stats div {
+  padding-top: 25px;
+}
 
-                        <div class="form-group">
+.about-stats strong {
+  display: block;
 
-                            <label for="name">
-                                Your Name
-                            </label>
+  font-size: 45px;
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Peter Ejiiro"
-                                required
-                            >
+  color: #65d8c9;
+}
 
-                        </div>
+.about-stats span {
+  color: #6d7999;
+}
 
 
-                        <div class="form-group">
+/* =========================================
+   CONTACT
+========================================= */
 
-                            <label for="email">
-                                Email Address
-                            </label>
+.contact-section {
+  border-top: 1px solid rgba(120, 140, 190, 0.12);
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="you@example.com"
-                                required
-                            >
+  padding: 160px 0;
 
-                        </div>
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(21, 60, 108, 0.35),
+      transparent 40%
+    );
+}
 
-                    </div>
+.contact-container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
 
+.contact-section h2 {
+  font-size: clamp(60px, 10vw, 120px);
 
-                    <div class="form-group">
+  line-height: 0.9;
 
-                        <label for="service">
-                            Service
-                        </label>
+  letter-spacing: -7px;
 
-                        <select
-                            id="service"
-                            name="service"
-                            required
-                        >
-                            <option value="">
-                                Select a service
-                            </option>
+  margin-bottom: 45px;
+}
 
-                            <option value="Web Development">
-                                Web Development
-                            </option>
+.contact-section h2 span {
+  color: #65d8c9;
+}
 
-                            <option value="UI/UX Design">
-                                UI/UX Design
-                            </option>
+.contact-description {
+  max-width: 650px;
 
-                            <option value="Brand Identity">
-                                Brand Identity
-                            </option>
+  color: #8e9abb;
 
-                            <option value="Other">
-                                Other
-                            </option>
+  font-size: 21px;
 
-                        </select>
+  margin-bottom: 40px;
+}
 
-                    </div>
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
 
+  gap: 15px;
 
-                    <div class="form-group">
+  margin-bottom: 70px;
+}
 
-                        <label for="message">
-                            Project Details
-                        </label>
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="7"
-                            placeholder="Tell me about your project..."
-                            required
-                        ></textarea>
+  gap: 35px;
 
-                    </div>
+  padding-top: 30px;
 
+  border-top: 1px solid #27345e;
+}
 
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Fundz Project Enquiry"
-                    >
+.contact-details a {
+  color: #8d99b8;
 
+  transition: 0.3s ease;
+}
 
-                    <button
-                        type="submit"
-                        class="btn btn-primary form-submit"
-                    >
-                        Send Project Enquiry
-                        <span>→</span>
-                    </button>
+.contact-details a:hover {
+  color: #65d8c9;
+}
 
 
-                    <p
-                        class="form-status"
-                        id="formStatus"
-                    ></p>
+/* =========================================
+   FOOTER
+========================================= */
 
-                </form>
+.footer {
+  width: min(1200px, 92%);
+  margin: auto;
 
-            </div>
+  padding: 60px 0;
 
-        </section>
+  display: grid;
 
-    </main>
+  grid-template-columns: 1fr 1fr 1fr;
 
+  gap: 30px;
 
-    <!-- ================= FOOTER ================= -->
+  border-top: 1px solid #1b2748;
 
-    <footer class="site-footer">
+  color: #6e7999;
+}
 
-        <div class="container footer-inner">
+.footer strong {
+  color: white;
 
-            <div>
+  font-size: 24px;
+}
 
-                <a
-                    href="#home"
-                    class="footer-logo"
-                >
-                    Fundz
-                </a>
+.footer-links {
+  display: flex;
 
-                <p>
-                    Web Development • UI/UX • Branding
-                </p>
+  gap: 20px;
 
-            </div>
+  flex-wrap: wrap;
+}
 
+.footer-links a:hover {
+  color: #65d8c9;
+}
 
-            <div class="footer-links">
+.copyright {
+  text-align: right;
+}
 
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
 
-            </div>
+/* =========================================
+   TABLET
+========================================= */
 
+@media (max-width: 900px) {
 
-            <p class="copyright">
-                © <span id="year"></span> Fundz.
-                All rights reserved.
-            </p>
+  .desktop-nav {
+    display: none;
+  }
 
-        </div>
+  .menu-button {
+    display: flex;
+  }
 
-    </footer>
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 
-    <script src="script.js"></script>
+  .footer {
+    grid-template-columns: 1fr;
+  }
 
-</body>
-</html>
+  .copyright {
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .nav-container {
+    min-height: 105px;
+  }
+
+  .brand-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 19px;
+  }
+
+  .brand-icon span {
+    font-size: 34px;
+  }
+
+  .brand-text strong {
+    font-size: 32px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+
+  .hero h1 {
+    font-size: 57px;
+    letter-spacing: -4px;
+  }
+
+  .hero-description {
+    font-size: 19px;
+  }
+
+  .hero-services {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin-top: 80px;
+  }
+
+  .section {
+    padding: 100px 0;
+  }
+
+  .section-heading h2,
+  .about-section h2 {
+    font-size: 52px;
+    letter-spacing: -3px;
+  }
+
+  .service-card {
+    min-height: auto;
+
+    padding: 30px;
+  }
+
+  .service-number {
+    margin-bottom: 45px;
+  }
+
+  .project-card {
+    margin-bottom: 90px;
+  }
+
+  .project-image,
+  .project-visual {
+    min-height: 400px;
+
+    border-radius: 20px;
+  }
+
+  .project-image img {
+    height: 400px;
+  }
+
+  .image-fallback {
+    height: 400px;
+  }
+
+  .developer-visual {
+    padding: 25px;
+  }
+
+  .browser-content {
+    padding: 50px 25px;
+  }
+
+  .browser-content h3 {
+    font-size: 48px;
+  }
+
+  .studio-card {
+    width: 85%;
+    min-height: 330px;
+
+    padding: 30px;
+  }
+
+  .studio-card h3 {
+    margin-top: 55px;
+
+    font-size: 47px;
+  }
+
+  .project-info {
+    grid-template-columns: 45px 1fr;
+
+    gap: 12px;
+  }
+
+  .project-info h3 {
+    font-size: 32px;
+  }
+
+  .project-info p {
+    font-size: 16px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .contact-section {
+    padding: 110px 0;
+  }
+
+  .contact-section h2 {
+    font-size: 65px;
+    letter-spacing: -4px;
+  }
+
+  .contact-details {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .brand-text strong {
+    font-size: 28px;
+  }
+
+  .brand-text small {
+    font-size: 8px;
+  }
+
+  .hero h1 {
+    font-size: 49px;
+  }
+
+  .contact-section h2 {
+    font-size: 55px;
+  }
+
+}
