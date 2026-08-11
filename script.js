@@ -298,9 +298,9 @@ ${projectMessage}
 I found Fundz through your website.`;
 
         const whatsappURL =
-            "https://wa.me/2347048595463" +
-            phoneNumber +2349137511711
-            "?text=" +2349137511711
+            "https://wa.me/2347048595463"
+            phoneNumber 
+            "?text=" 
             encodeURIComponent(message);
 
         window.open(whatsappURL, "_blank");
