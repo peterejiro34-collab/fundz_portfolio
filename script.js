@@ -252,3 +252,59 @@ document
         );
 
     });
+// ========================================
+// FUNDZ PROJECT ENQUIRY
+// ========================================
+
+const projectForm = document.getElementById("projectForm");
+
+if (projectForm) {
+
+    projectForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const projectType =
+            document.getElementById("projectType").value;
+
+        const clientName =
+            document.getElementById("clientName").value;
+
+        const clientEmail =
+            document.getElementById("clientEmail").value;
+
+        const projectMessage =
+            document.getElementById("projectMessage").value;
+
+        const phoneNumber = "2347048595463";
+
+        const message =
+`Hello Fundz 👋
+
+I would like to start a project.
+
+Name:
+${clientName}
+
+Email:
+${clientEmail}
+
+Project Type:
+${projectType}
+
+Project Details:
+${projectMessage}
+
+I found Fundz through your website.`;
+
+        const whatsappURL =
+            "https://wa.me/2347048595463" +
+            phoneNumber +2349137511711
+            "?text=" +2349137511711
+            encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+}
