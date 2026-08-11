@@ -1582,3 +1582,130 @@ button {
 
     transform: translateY(0);
 }
+/* ========================================
+   PROJECT ENQUIRY
+======================================== */
+
+.project-details {
+    padding: 100px 30px;
+    background: #070c27;
+    border-top: 1px solid rgba(120, 150, 220, 0.2);
+}
+
+.project-details-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-details h2 {
+    color: #dce4f8;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.project-form {
+    background: #0a1233;
+    border: 1px solid #263d70;
+    border-radius: 28px;
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #9caaca;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #070d29;
+
+    border: 1px solid #2a4173;
+    border-radius: 14px;
+
+    padding: 18px;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 17px;
+
+    outline: none;
+
+    transition: border-color 0.25s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #61dfc8;
+}
+
+.project-submit {
+    width: 100%;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 24px;
+
+    background: #61dfc8;
+    color: #061026;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.project-submit span {
+    margin-left: 12px;
+    font-size: 28px;
+}
+
+.project-submit:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .project-details {
+        padding: 70px 30px;
+    }
+
+    .project-details h2 {
+        font-size: 28px;
+    }
+
+    .project-form {
+        padding: 25px 20px;
+        border-radius: 24px;
+    }
+
+    .project-submit {
+        font-size: 18px;
+        padding: 21px;
+    }
+
+}
