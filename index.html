@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,12 +11,12 @@
 
     <meta
         name="description"
-        content="Fundz — Web Development, UI/UX Design and Branding by Peter Ejiiro."
+        content="Fundz — Digital Creative Studio founded by Peter Ejiro. Web development, UI/UX design, branding and digital experiences."
     >
 
     <meta
-        name="theme-color"
-        content="#050a24"
+        name="author"
+        content="Peter Ejiro"
     >
 
     <title>Fundz | Digital Creative Studio</title>
@@ -26,179 +27,203 @@
     >
 </head>
 
+
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <header class="site-header">
+    <header class="site-header" id="home">
 
-        <div class="container nav-container">
+        <div class="nav-container">
+
+            <!-- LOGO -->
 
             <a
                 href="#home"
                 class="logo"
+                aria-label="Fundz Home"
             >
-                <span class="logo-icon">F</span>
 
-                <span class="logo-text">
-                    <strong>Fundz</strong>
-                    <small>DIGITAL CREATIVE STUDIO</small>
-                </span>
+                <div class="logo-mark">
+                    F
+                </div>
+
+                <div class="logo-text">
+
+                    <strong>
+                        Fundz
+                    </strong>
+
+                    <span>
+                        DIGITAL CREATIVE STUDIO
+                    </span>
+
+                </div>
+
             </a>
 
-            <nav
-                class="desktop-nav"
-                aria-label="Main navigation"
-            >
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav class="desktop-nav">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#books">
+                    Books
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
             </nav>
 
+
+            <!-- MENU BUTTON -->
+
             <button
-                class="menu-toggle"
-                id="menuToggle"
+                class="menu-button"
+                id="menuButton"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
             >
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
 
         </div>
 
-        <!-- Mobile Navigation -->
 
-        <nav class="mobile-menu">
+        <!-- MOBILE MENU -->
 
-    <a href="#home">Home</a>
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
 
-    <a href="#services">Services</a>
+            <a href="#home">
+                Home
+            </a>
 
-    <a href="#work">Work</a>
+            <a href="#services">
+                Services
+            </a>
 
-    <a href="#books">Books</a>
+            <a href="#work">
+                Work
+            </a>
 
-    <a href="#about">About</a>
+            <a href="#books">
+                Books
+            </a>
 
-    <a href="#contact">Contact</a>
+            <a href="#about">
+                About
+            </a>
 
-</nav>
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
 
     </header>
 
 
+
     <main>
 
-        <!-- ================= HERO ================= -->
 
-        <section
-            class="hero"
-            id="home"
-        >
+        <!-- =========================
+             HERO
+        ========================== -->
 
-            <div class="container hero-grid">
+        <section class="hero">
 
-                <div class="hero-content">
+            <div class="hero-content">
 
-                    <p class="eyebrow">
-                        WEB DEVELOPMENT • UI/UX • BRANDING
-                    </p>
+                <p class="eyebrow">
+                    WEB DEVELOPMENT • UI/UX • BRANDING
+                </p>
 
-                    <h1>
-                        Building digital
-                        <span>experiences</span>
-                        that move brands forward.
-                    </h1>
 
-                    <p class="hero-description">
-                        I'm <strong>Peter Ejiiro</strong>, founder of Fundz.
-                        I design and build modern websites and digital
-                        experiences that look great, perform fast and help
-                        brands grow online.
-                    </p>
+                <h1>
+                    Building digital
+                    <span>experiences</span>
+                    that move brands
+                    forward.
+                </h1>
 
-                    <div class="hero-buttons">
 
-                        <a
-                            href="#work"
-                            class="btn btn-primary"
-                        >
-                            View My Work
-                            <span>→</span>
-                        </a>
+                <p class="hero-description">
 
-                        <a
-                            href="#contact"
-                            class="btn btn-secondary"
-                        >
-                            Start a Project
-                        </a>
+                    I'm
+                    <strong>Peter Ejiro</strong>,
+                    founder of Fundz.
 
-                    </div>
+                    I design and build modern websites
+                    and digital experiences that look great,
+                    perform fast and help brands grow online.
 
-                    <div class="hero-services">
+                </p>
 
-                        <div>
-                            <strong>01</strong>
-                            <span>Web Development</span>
-                        </div>
 
-                        <div>
-                            <strong>02</strong>
-                            <span>UI/UX Design</span>
-                        </div>
+                <div class="hero-buttons">
 
-                        <div>
-                            <strong>03</strong>
-                            <span>Brand Identity</span>
-                        </div>
+                    <a
+                        href="#work"
+                        class="primary-button"
+                    >
+                        View My Work
+                        <span>→</span>
+                    </a>
 
-                    </div>
+
+                    <a
+                        href="#contact"
+                        class="secondary-button"
+                    >
+                        Start a Project
+                    </a>
 
                 </div>
 
 
-                <div class="hero-visual">
+                <div class="hero-services">
 
-                    <div class="hero-card">
+                    <div>
+                        <strong>01</strong>
+                        <span>Web Development</span>
+                    </div>
 
-                        <div class="card-glow"></div>
+                    <div>
+                        <strong>02</strong>
+                        <span>UI/UX Design</span>
+                    </div>
 
-                        <div class="card-window">
-
-                            <div class="window-top">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                                <small>fundz.dev</small>
-                            </div>
-
-                            <div class="window-content">
-
-                                <p>DEVELOPER PLATFORM</p>
-
-                                <h2>
-                                    Build.
-                                    <br>
-                                    Ship.
-                                    <span>Grow.</span>
-                                </h2>
-
-                                <div class="fake-lines">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                    <div>
+                        <strong>03</strong>
+                        <span>Brand Identity</span>
                     </div>
 
                 </div>
@@ -208,16 +233,23 @@
         </section>
 
 
-        <!-- ================= SERVICES ================= -->
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
 
         <section
-            class="services section"
+            class="section services-section"
             id="services"
         >
 
-            <div class="container">
+            <div class="section-header">
 
-                <div class="section-heading">
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
 
                     <p class="eyebrow">
                         WHAT I DO
@@ -228,300 +260,291 @@
                         <span>built to perform.</span>
                     </h2>
 
+                </div>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <!-- SERVICE 1 -->
+
+                <article class="service-card">
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
                     <p>
-                        From strategy and design to development and launch,
-                        Fundz helps turn ideas into polished digital products.
+                        Fast, responsive and modern websites
+                        built for businesses, creators,
+                        startups and personal brands.
                     </p>
 
-                </div>
+                    <ul>
+
+                        <li>
+                            Business Websites
+                        </li>
+
+                        <li>
+                            Portfolio Websites
+                        </li>
+
+                        <li>
+                            Landing Pages
+                        </li>
+
+                        <li>
+                            Responsive Design
+                        </li>
+
+                    </ul>
+
+                </article>
 
 
-                <div class="service-grid">
 
-                    <article class="service-card">
+                <!-- SERVICE 2 -->
 
-                        <div class="service-number">
-                            01
-                        </div>
+                <article class="service-card">
 
-                        <div class="service-icon">
-                            &lt;/&gt;
-                        </div>
+                    <div class="service-number">
+                        02
+                    </div>
 
-                        <h3>
-                            Web Development
-                        </h3>
+                    <h3>
+                        UI/UX Design
+                    </h3>
 
-                        <p>
-                            Fast, responsive and modern websites built
-                            for businesses, creators and digital brands.
-                        </p>
+                    <p>
+                        Clean and intuitive interfaces designed
+                        to give users a better digital experience.
+                    </p>
 
-                        <ul>
-                            <li>Business websites</li>
-                            <li>Landing pages</li>
-                            <li>Portfolio websites</li>
-                            <li>Responsive development</li>
-                        </ul>
+                    <ul>
 
-                    </article>
+                        <li>
+                            Website UI
+                        </li>
 
+                        <li>
+                            Mobile App UI
+                        </li>
 
-                    <article class="service-card">
+                        <li>
+                            User Experience
+                        </li>
 
-                        <div class="service-number">
-                            02
-                        </div>
+                        <li>
+                            Prototyping
+                        </li>
 
-                        <div class="service-icon">
-                            ◈
-                        </div>
+                    </ul>
 
-                        <h3>
-                            UI/UX Design
-                        </h3>
-
-                        <p>
-                            Clean interfaces and user experiences designed
-                            around clarity, usability and conversion.
-                        </p>
-
-                        <ul>
-                            <li>Website UI design</li>
-                            <li>Mobile interfaces</li>
-                            <li>Wireframes</li>
-                            <li>Design systems</li>
-                        </ul>
-
-                    </article>
+                </article>
 
 
-                    <article class="service-card">
 
-                        <div class="service-number">
-                            03
-                        </div>
+                <!-- SERVICE 3 -->
 
-                        <div class="service-icon">
-                            ✦
-                        </div>
+                <article class="service-card">
 
-                        <h3>
-                            Brand Identity
-                        </h3>
+                    <div class="service-number">
+                        03
+                    </div>
 
-                        <p>
-                            Visual identities that give businesses a
-                            recognizable and professional digital presence.
-                        </p>
+                    <h3>
+                        Brand Identity
+                    </h3>
 
-                        <ul>
-                            <li>Brand direction</li>
-                            <li>Logo concepts</li>
-                            <li>Visual systems</li>
-                            <li>Digital brand assets</li>
-                        </ul>
+                    <p>
+                        Visual identities that give businesses
+                        a recognizable and professional presence.
+                    </p>
 
-                    </article>
+                    <ul>
 
-                </div>
+                        <li>
+                            Logo Design
+                        </li>
+
+                        <li>
+                            Brand Systems
+                        </li>
+
+                        <li>
+                            Social Graphics
+                        </li>
+
+                        <li>
+                            Creative Direction
+                        </li>
+
+                    </ul>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- ================= WORK ================= -->
+
+        <!-- =========================
+             WORK
+        ========================== -->
 
         <section
-            class="work section"
+            class="section work-section"
             id="work"
         >
 
-            <div class="container">
+            <div class="section-header">
 
-                <div class="section-heading work-heading">
+                <span class="section-number">
+                    02
+                </span>
 
-                    <div>
+                <div>
 
-                        <p class="eyebrow">
-                            SELECTED WORK
-                        </p>
-
-                        <h2>
-                            Projects that
-                            <span>tell the story.</span>
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        A selection of digital experiences,
-                        brand systems and creative projects.
+                    <p class="eyebrow">
+                        SELECTED WORK
                     </p>
+
+                    <h2>
+                        Projects that
+                        <span>make an impact.</span>
+                    </h2>
 
                 </div>
 
+            </div>
 
-                <!-- Project 01 -->
 
-                <article class="project">
+            <div class="work-grid">
+
+
+                <!-- PROJECT 1 -->
+
+                <article class="project-card">
 
                     <div class="project-image">
 
                         <img
                             src="assets/fundz-brand-card.jpg"
-                            alt="Fundz brand identity"
+                            alt="Fundz brand identity project"
                             loading="lazy"
                         >
 
-                        <div class="project-tag">
+                        <span>
                             BRAND IDENTITY
-                        </div>
+                        </span>
 
                     </div>
 
 
-                    <div class="project-info">
+                    <div class="project-content">
 
-                        <div class="project-number">
+                        <p>
                             01
-                        </div>
+                        </p>
 
-                        <div>
+                        <h3>
+                            Fundz Brand System
+                        </h3>
 
-                            <h3>
-                                Fundz Brand System
-                            </h3>
-
-                            <p>
-                                Technology-driven visual identity for
-                                the Fundz digital brand.
-                            </p>
-
-                        </div>
+                        <span>
+                            Technology-driven visual identity
+                            for the Fundz digital brand.
+                        </span>
 
                     </div>
 
                 </article>
 
 
-                <!-- Project 02 -->
 
-                <article class="project project-reverse">
+                <!-- PROJECT 2 -->
 
-                    <div class="project-image website-preview">
+                <article class="project-card project-placeholder">
 
-                        <div class="preview-browser">
+                    <div class="project-visual">
 
-                            <div class="preview-top">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                                <small>fundz.dev</small>
-                            </div>
-
-                            <div class="preview-body">
-
-                                <p>
-                                    DEVELOPER PLATFORM
-                                </p>
-
-                                <h3>
-                                    Build. Ship.
-                                    <span>Grow.</span>
-                                </h3>
-
-                                <div class="preview-line"></div>
-                                <div class="preview-line short"></div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="project-tag">
+                        <span>
                             WEB DEVELOPMENT
-                        </div>
+                        </span>
+
+                        <h3>
+                            Build.
+                            <br>
+                            Ship.
+                            <em>Grow.</em>
+                        </h3>
 
                     </div>
 
 
-                    <div class="project-info">
+                    <div class="project-content">
 
-                        <div class="project-number">
+                        <p>
                             02
-                        </div>
+                        </p>
 
-                        <div>
+                        <h3>
+                            Fundz Web Platform
+                        </h3>
 
-                            <h3>
-                                Fundz Developer Platform
-                            </h3>
-
-                            <p>
-                                A modern developer-focused web experience
-                                designed around technology and growth.
-                            </p>
-
-                        </div>
+                        <span>
+                            A modern digital platform focused
+                            on performance and user experience.
+                        </span>
 
                     </div>
 
                 </article>
 
 
-                <!-- Project 03 -->
 
-                <article class="project">
+                <!-- PROJECT 3 -->
 
-                    <div class="project-image design-preview">
+                <article class="project-card project-placeholder">
 
-                        <div class="design-grid">
+                    <div class="project-visual project-visual-three">
 
-                            <div class="design-box large">
-                                F
-                            </div>
+                        <span>
+                            UI / UX DESIGN
+                        </span>
 
-                            <div class="design-box">
-                                UI
-                            </div>
-
-                            <div class="design-box">
-                                UX
-                            </div>
-
-                            <div class="design-box wide">
-                                FUNDZ
-                            </div>
-
-                        </div>
-
-                        <div class="project-tag">
-                            UI/UX DESIGN
-                        </div>
+                        <h3>
+                            Design
+                            <br>
+                            with
+                            <em>purpose.</em>
+                        </h3>
 
                     </div>
 
 
-                    <div class="project-info">
+                    <div class="project-content">
 
-                        <div class="project-number">
+                        <p>
                             03
-                        </div>
+                        </p>
 
-                        <div>
+                        <h3>
+                            Digital Experience
+                        </h3>
 
-                            <h3>
-                                Digital Interface System
-                            </h3>
-
-                            <p>
-                                A flexible interface direction focused on
-                                clarity, consistency and modern interaction.
-                            </p>
-
-                        </div>
+                        <span>
+                            Interface concepts designed around
+                            clarity, usability and conversion.
+                        </span>
 
                     </div>
 
@@ -532,63 +555,285 @@
         </section>
 
 
-        <!-- ================= ABOUT ================= -->
+
+        <!-- =========================
+             BOOKS
+        ========================== -->
 
         <section
-            class="about section"
+            class="section books-section"
+            id="books"
+        >
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <p class="eyebrow">
+                        AUTHOR • BOOKS • IDEAS
+                    </p>
+
+                    <h2>
+                        Books by
+                        <span>Peter Ejiro.</span>
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="books-intro">
+
+                <div>
+
+                    <p>
+                        Beyond technology and design, I also
+                        write books focused on mindset,
+                        personal growth, freedom and hope.
+                    </p>
+
+                    <p>
+                        Explore my books and discover ideas
+                        created to inspire a different way
+                        of thinking.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="amazon-button"
+                >
+                    Visit My Amazon Author Page
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+
+
+            <div class="books-grid">
+
+
+                <!-- BOOK 1 -->
+
+                <article class="book-card">
+
+                    <div class="book-image">
+
+                        <img
+                            src="assets/power-of-mindset.jpg"
+                            alt="The Power of Mindset by Peter"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            MINDSET • PERSONAL GROWTH
+                        </span>
+
+                        <h3>
+                            The Power of Mindset
+                        </h3>
+
+                        <p>
+                            How your inner world shapes
+                            your outer reality.
+                        </p>
+
+                        <a
+                            href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="book-button"
+                        >
+                            View on Amazon
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BOOK 2 -->
+
+                <article class="book-card">
+
+                    <div class="book-image">
+
+                        <img
+                            src="assets/breaking-free.jpg"
+                            alt="Breaking Free From Your Past by Peter"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            PERSONAL GROWTH • FREEDOM
+                        </span>
+
+                        <h3>
+                            Breaking Free From Your Past
+                        </h3>
+
+                        <p>
+                            A journey about letting go of
+                            the past and moving forward.
+                        </p>
+
+                        <a
+                            href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="book-button"
+                        >
+                            View on Amazon
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BOOK 3 -->
+
+                <article class="book-card">
+
+                    <div class="book-image">
+
+                        <img
+                            src="assets/last-hope.jpg"
+                            alt="The Last Hope by Peter"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            HOPE • INSPIRATION
+                        </span>
+
+                        <h3>
+                            The Last Hope
+                        </h3>
+
+                        <p>
+                            A story about hope, resilience
+                            and finding strength.
+                        </p>
+
+                        <a
+                            href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="book-button"
+                        >
+                            View on Amazon
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            class="section about-section"
             id="about"
         >
 
-            <div class="container about-grid">
+            <div class="section-header">
 
-                <div class="about-title">
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
 
                     <p class="eyebrow">
                         ABOUT FUNDZ
                     </p>
 
                     <h2>
-                        Creative thinking.
-                        <span>Technical execution.</span>
+                        Technology meets
+                        <span>creativity.</span>
                     </h2>
 
                 </div>
 
+            </div>
 
-                <div class="about-content">
+
+            <div class="about-grid">
+
+                <div class="about-large">
 
                     <p class="large-text">
-                        Fundz is a digital creative studio focused on
-                        building meaningful online experiences for
-                        modern brands.
+                        Fundz is a digital creative studio
+                        focused on building modern digital
+                        experiences for ambitious brands.
+                    </p>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <p>
+                        I'm Peter Ejiro, the founder of Fundz.
+                        I combine web development, UI/UX
+                        design and branding to create digital
+                        products that are useful, beautiful
+                        and built to grow.
                     </p>
 
                     <p>
-                        I’m Peter Ejiiro, the founder behind Fundz.
-                        My approach combines visual design, web
-                        development and brand thinking to create
-                        websites and digital products that feel
-                        professional and purposeful.
+                        Whether you're launching a business,
+                        building a personal brand or creating
+                        your next digital product, Fundz can
+                        help turn the idea into reality.
                     </p>
 
-                    <div class="about-stats">
 
-                        <div>
-                            <strong>03</strong>
-                            <span>Core Services</span>
-                        </div>
-
-                        <div>
-                            <strong>100%</strong>
-                            <span>Creative Focus</span>
-                        </div>
-
-                        <div>
-                            <strong>24/7</strong>
-                            <span>Digital Presence</span>
-                        </div>
-
-                    </div>
+                    <a
+                        href="#contact"
+                        class="text-link"
+                    >
+                        Let's work together
+                        <span>→</span>
+                    </a>
 
                 </div>
 
@@ -597,443 +842,277 @@
         </section>
 
 
-        <!-- ================= PROCESS ================= -->
-
-        <section class="process section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow">
-                        MY PROCESS
-                    </p>
-
-                    <h2>
-                        From idea to
-                        <span>launch.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="process-grid">
-
-                    <div class="process-step">
-
-                        <span>01</span>
-
-                        <h3>
-                            Discover
-                        </h3>
-
-                        <p>
-                            Understand the brand, goals,
-                            audience and project requirements.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-step">
-
-                        <span>02</span>
-
-                        <h3>
-                            Design
-                        </h3>
-
-                        <p>
-                            Turn ideas into a clear visual
-                            direction and user experience.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-step">
-
-                        <span>03</span>
-
-                        <h3>
-                            Build
-                        </h3>
-
-                        <p>
-                            Develop a responsive, polished
-                            and performance-focused experience.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-step">
-
-                        <span>04</span>
-
-                        <h3>
-                            Launch
-                        </h3>
-
-                        <p>
-                            Test, deploy and help your digital
-                            presence move forward.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
 
         <!-- =========================
-     BOOKS SECTION
-========================= -->
-<section class="books-section" id="books">
-
-    <div class="section-heading">
-        <span class="section-number">04</span>
-
-        <div>
-            <p class="eyebrow">BOOKS • AUTHOR • IDEAS</p>
-
-            <h2>
-                Books by
-                <span>Peter Ejiro.</span>
-            </h2>
-        </div>
-    </div>
-
-    <div class="books-intro">
-        <p>
-            Explore my books on mindset, personal growth,
-            freedom and hope. Each book is created to inspire
-            readers to think differently and move forward.
-        </p>
-
-        <a
-            href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="amazon-main-button"
-        >
-            Visit My Amazon Author Page
-            <span>↗</span>
-        </a>
-    </div>
-
-
-    <!-- BOOK GRID -->
-    <div class="books-grid">
-
-        <!-- BOOK 1 -->
-        <article class="book-card">
-
-            <div class="book-image">
-                <img
-                    src="assets/power-of-mindset.jpg"
-                    alt="The Power of Mindset by Peter"
-                    loading="lazy"
-                >
-            </div>
-
-            <div class="book-info">
-
-                <span class="book-category">
-                    MINDSET • PERSONAL GROWTH
-                </span>
-
-                <h3>
-                    The Power of Mindset
-                </h3>
-
-                <p>
-                    How your inner world shapes your outer reality.
-                    A book about changing the way you think,
-                    believe and approach life.
-                </p>
-
-                <a
-                    href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="book-button"
-                >
-                    View on Amazon
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- BOOK 2 -->
-        <article class="book-card">
-
-            <div class="book-image">
-                <img
-                    src="assets/breaking-free.jpg"
-                    alt="Breaking Free From Your Past by Peter"
-                    loading="lazy"
-                >
-            </div>
-
-            <div class="book-info">
-
-                <span class="book-category">
-                    PERSONAL GROWTH • FREEDOM
-                </span>
-
-                <h3>
-                    Breaking Free From Your Past
-                </h3>
-
-                <p>
-                    A powerful journey about letting go of the past,
-                    overcoming limitations and creating a new
-                    direction for your life.
-                </p>
-
-                <a
-                    href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="book-button"
-                >
-                    View on Amazon
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- BOOK 3 -->
-        <article class="book-card">
-
-            <div class="book-image">
-                <img
-                    src="assets/last-hope.jpg"
-                    alt="The Last Hope by Peter"
-                    loading="lazy"
-                >
-            </div>
-
-            <div class="book-info">
-
-                <span class="book-category">
-                    HOPE • INSPIRATION
-                </span>
-
-                <h3>
-                    The Last Hope
-                </h3>
-
-                <p>
-                    A story about hope, resilience and finding
-                    strength when life feels uncertain.
-                </p>
-
-                <a
-                    href="https://www.amazon.com/stores/Peter/author/B0G62LZR54?ref=ap_rdr&shoppingPortalEnabled=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="book-button"
-                >
-                    View on Amazon
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-        <!-- ================= CONTACT ================= -->
+             CONTACT
+        ========================== -->
 
         <section
-            class="contact section"
+            class="contact-section"
             id="contact"
         >
 
-            <div class="container contact-grid">
+            <div class="contact-container">
 
-                <div class="contact-copy">
-
-                    <p class="eyebrow">
-                        START A PROJECT
-                    </p>
-
-                    <h2>
-                        Let's build something
-                        <span>great.</span>
-                    </h2>
-
-                    <p>
-                        Have a website, brand or digital product
-                        in mind? Tell me what you're working on
-                        and let's start the conversation.
-                    </p>
+                <p class="eyebrow">
+                    START A PROJECT
+                </p>
 
 
-                    <div class="contact-links">
+                <h2>
+                    Let's build
+                    <br>
+                    something
+                    <span>great.</span>
+                </h2>
 
-                        <a
-                            href="mailto:peterejiro34@gmail.com"
+
+                <p class="contact-description">
+
+                    Have a website, brand or digital product
+                    in mind? Tell me about your project and
+                    let's make it happen.
+
+                </p>
+
+
+                <!-- CONTACT FORM -->
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                >
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Peter"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            What do you need?
+                        </label>
+
+                        <select
+                            id="service"
+                            name="service"
+                            required
                         >
-                            <span>Email</span>
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option value="Web Development">
+                                Web Development
+                            </option>
+
+                            <option value="UI/UX Design">
+                                UI/UX Design
+                            </option>
+
+                            <option value="Branding">
+                                Brand Identity
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Project Details
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tell me about your project..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        Send Project Enquiry
+                        <span>→</span>
+
+                    </button>
+
+
+                    <p
+                        class="form-status"
+                        id="formStatus"
+                    ></p>
+
+                </form>
+
+
+
+                <!-- DIRECT CONTACT -->
+
+                <div class="direct-contact">
+
+                    <div>
+
+                        <span>
+                            EMAIL
+                        </span>
+
+                        <a href="mailto:peterejiro34@gmail.com">
                             peterejiro34@gmail.com
                         </a>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            WHATSAPP
+                        </span>
 
                         <a
                             href="https://wa.me/2347048595463"
                             target="_blank"
-                            rel="noopener"
+                            rel="noopener noreferrer"
                         >
-                            <span>WhatsApp</span>
-                            +2347048595463
-                        
+                            +234 704 859 5463
                         </a>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            X
+                        </span>
 
                         <a
                             href="https://x.com/fundz34"
                             target="_blank"
-                            rel="noopener"
+                            rel="noopener noreferrer"
                         >
-                            <span>X</span>
                             @fundz34
                         </a>
 
                     </div>
 
                 </div>
-<section class="project-details" id="contact">
 
-    <div class="project-details-inner">
-
-        <h2>Project Details</h2>
-
-        <form
-            id="projectForm"
-            class="project-form"
-        >
-
-            <div class="form-group">
-                <label for="projectType">Project Type</label>
-
-                <select id="projectType" required>
-                    <option value="">Select a service</option>
-                    <option value="Web Development">
-                        Web Development
-                    </option>
-                    <option value="UI/UX Design">
-                        UI/UX Design
-                    </option>
-                    <option value="Brand Identity">
-                        Brand Identity
-                    </option>
-                    <option value="Website Redesign">
-                        Website Redesign
-                    </option>
-                    <option value="Digital Product">
-                        Digital Product
-                    </option>
-                </select>
             </div>
 
-            <div class="form-group">
-                <label for="clientName">Your Name</label>
+        </section>
 
-                <input
-                    type="text"
-                    id="clientName"
-                    placeholder="Enter your name"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="clientEmail">Email</label>
-
-                <input
-                    type="email"
-                    id="clientEmail"
-                    placeholder="you@example.com"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="projectMessage">
-                    Tell us about your project
-                </label>
-
-                <textarea
-                    id="projectMessage"
-                    rows="6"
-                    placeholder="Tell Fundz what you want to build..."
-                    required
-                ></textarea>
-            </div>
-
-            <button
-                type="submit"
-                class="project-submit"
-            >
-                Send Project Enquiry
-                <span>→</span>
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
+    </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer class="site-footer">
 
-        <div class="container footer-inner">
+        <div class="footer-container">
 
-            <div>
 
-                <a
-                    href="#home"
-                    class="footer-logo"
-                >
-                    Fundz
-                </a>
+            <div class="footer-brand">
 
-                <p>
-                    Web Development • UI/UX • Branding
-                </p>
+                <div class="logo-mark">
+                    F
+                </div>
+
+                <div>
+
+                    <strong>
+                        Fundz
+                    </strong>
+
+                    <span>
+                        DIGITAL CREATIVE STUDIO
+                    </span>
+
+                </div>
 
             </div>
 
 
             <div class="footer-links">
 
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#books">
+                    Books
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
 
             </div>
 
 
             <p class="copyright">
-                © <span id="year"></span> Fundz.
-                All rights reserved.
+                © <span id="year"></span>
+                Fundz. All rights reserved.
             </p>
 
         </div>
@@ -1041,7 +1120,11 @@
     </footer>
 
 
+
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
