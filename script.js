@@ -1,254 +1,127 @@
-/* =========================================================
-   FUNDZ V3
-   JAVASCRIPT
-========================================================= */
+/* =========================================
+   FUNDZ V3 JAVASCRIPT
+========================================= */
 
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
 
-/* ================= MOBILE MENU ================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
+// =========================================
+// MOBILE MENU
+// =========================================
 
-if (menuToggle && mobileNav) {
+menuButton.addEventListener("click", () => {
 
-    menuToggle.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.toggle("active");
 
-        const isOpen =
-            mobileNav.classList.toggle("active");
+  menuButton.setAttribute(
+    "aria-expanded",
+    isOpen
+  );
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
-
-    });
-
-
-    const mobileLinks =
-        mobileNav.querySelectorAll("a");
-
-    mobileLinks.forEach((link) => {
-
-        link.addEventListener("click", () => {
-
-            mobileNav.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
-
-    });
-
-}
-
-
-/* ================= CURRENT YEAR ================= */
-
-const yearElement =
-    document.getElementById("year");
-
-if (yearElement) {
-
-    yearElement.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* ================= CONTACT FORM ================= */
-
-const contactForm =
-    document.getElementById("contactForm");
-
-const formStatus =
-    document.getElementById("formStatus");
-
-
-if (contactForm) {
-
-    contactForm.addEventListener(
-        "submit",
-        async function (event) {
-
-            event.preventDefault();
-
-            const submitButton =
-                contactForm.querySelector(
-                    'button[type="submit"]'
-                );
-
-            const originalText =
-                submitButton.innerHTML;
-
-
-            submitButton.disabled = true;
-
-            submitButton.innerHTML =
-                "Sending...";
-
-
-            const formData =
-                new FormData(contactForm);
-
-
-            try {
-
-                const response =
-                    await fetch(
-                        contactForm.action,
-                        {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "Accept":
-                                    "application/json"
-                            }
-                        }
-                    );
-
-
-                if (response.ok) {
-
-                    formStatus.textContent =
-                        "Thank you! Your project enquiry has been sent.";
-
-                    formStatus.style.color =
-                        "#63dcc9";
-
-                    contactForm.reset();
-
-                } else {
-
-                    throw new Error(
-                        "Form submission failed."
-                    );
-
-                }
-
-            } catch (error) {
-
-                formStatus.textContent =
-                    "Something went wrong. Please try again or contact Fundz directly.";
-
-                formStatus.style.color =
-                    "#ff8b8b";
-
-            }
-
-
-            submitButton.disabled = false;
-
-            submitButton.innerHTML =
-                originalText;
-
-        }
-    );
-
-}
-
-
-/* ================= SCROLL REVEAL ================= */
-
-const revealElements =
-    document.querySelectorAll(
-        ".service-card, .project, .process-step, .about-content, .contact-form"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.1
-        }
-    );
-
-
-revealElements.forEach((element) => {
-
-    element.classList.add(
-        "reveal"
-    );
-
-    observer.observe(element);
+  menuButton.setAttribute(
+    "aria-label",
+    isOpen
+      ? "Close menu"
+      : "Open menu"
+  );
 
 });
 
 
-/* ================= SMOOTH ANCHOR OFFSET ================= */
+// =========================================
+// CLOSE MENU AFTER CLICKING A LINK
+// =========================================
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach((link) => {
+const mobileLinks =
+  document.querySelectorAll(
+    ".mobile-menu a"
+  );
 
-        link.addEventListener(
-            "click",
-            function (event) {
+mobileLinks.forEach((link) => {
 
-                const targetId =
-                    this.getAttribute("href");
+  link.addEventListener("click", () => {
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
+    mobileMenu.classList.remove("active");
 
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-                if (!target) {
-                    return;
-                }
+    menuButton.setAttribute(
+      "aria-label",
+      "Open menu"
+    );
 
-                event.preventDefault();
+  });
 
-                const header =
-                    document.querySelector(
-                        ".site-header"
-                    );
+});
 
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
 
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top +
-                    window.scrollY -
-                    headerHeight;
+// =========================================
+// CLOSE MENU WHEN CLICKING OUTSIDE
+// =========================================
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
+document.addEventListener("click", (event) => {
 
-            }
-        );
+  const clickedInsideMenu =
+    mobileMenu.contains(event.target);
 
-    });
+  const clickedButton =
+    menuButton.contains(event.target);
+
+  if (
+    !clickedInsideMenu &&
+    !clickedButton &&
+    mobileMenu.classList.contains("active")
+  ) {
+
+    mobileMenu.classList.remove("active");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+
+// =========================================
+// SCROLL HEADER EFFECT
+// =========================================
+
+const header =
+  document.querySelector(".site-header");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 50) {
+
+    header.style.boxShadow =
+      "0 10px 40px rgba(0,0,0,0.18)";
+
+  } else {
+
+    header.style.boxShadow = "none";
+
+  }
+
+});
+
+
+// =========================================
+// CURRENT YEAR
+// =========================================
+
+const year =
+  document.querySelector(".copyright");
+
+if (year) {
+
+  year.innerHTML =
+    `© ${new Date().getFullYear()} Fundz. All rights reserved.`;
+
+}
